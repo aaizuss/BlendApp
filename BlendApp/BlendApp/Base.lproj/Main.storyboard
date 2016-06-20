@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Blend View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BlendViewController" customModule="BlendApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0e5-YG-e5z" customClass="ColorPickerView" customModule="BlendApp" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="bnR-Y9-uiM">
+                                        <variation key="widthClass=regular" constant="350"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="240" id="pXB-Zx-K6i">
+                                        <variation key="widthClass=regular" constant="350"/>
+                                    </constraint>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ESC-jE-cKk" appends="YES" id="lQX-L7-s7q"/>
+                                </connections>
+                            </view>
+                            <view tag="101" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mdd-eQ-UA2" customClass="ColorPickerView" customModule="BlendApp" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="BqM-ON-6Ns">
+                                        <variation key="widthClass=regular" constant="350"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="240" id="V1h-pM-Vpm">
+                                        <variation key="widthClass=regular" constant="350"/>
+                                    </constraint>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6RJ-eF-lo4" appends="YES" id="eM8-Yu-0mr"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hb3-tV-fvK">
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="didTapSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IqA-JM-oow"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mdd-eQ-UA2" secondAttribute="bottom" constant="26" id="4WH-y1-hfz"/>
+                            <constraint firstItem="0e5-YG-e5z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="HoT-95-8hI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hb3-tV-fvK" secondAttribute="trailing" id="MWH-Oz-K8T"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hb3-tV-fvK" secondAttribute="bottom" constant="26" id="b95-n1-BsG"/>
+                            <constraint firstItem="Mdd-eQ-UA2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i53-jj-Xbf"/>
+                            <constraint firstItem="0e5-YG-e5z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rEy-EE-q4X"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ehq-Sf-aF9" appends="YES" id="F5i-ky-1pX"/>
+                            <outletCollection property="gestureRecognizers" destination="Lvs-wb-P89" appends="YES" id="63g-ge-dOm"/>
+                            <outletCollection property="gestureRecognizers" destination="LSB-nG-eJi" appends="YES" id="FPS-FN-tyE"/>
+                            <outletCollection property="gestureRecognizers" destination="phd-jY-0T2" appends="YES" id="pvm-o0-Yaj"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="bottomCircle" destination="Mdd-eQ-UA2" id="Gsp-zr-dYe"/>
+                        <outlet property="topCircle" destination="0e5-YG-e5z" id="Kj9-mQ-BCc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ESC-jE-cKk" userLabel="Top Picker Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="didTapColorPicker:" destination="BYZ-38-t0r" id="COW-6T-Exd"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="6RJ-eF-lo4" userLabel="Bottom Picker Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="didTapColorPicker:" destination="BYZ-38-t0r" id="Kqj-gi-N9l"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="ehq-Sf-aF9" userLabel="Brightness Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="handleBrightnessPan:" destination="BYZ-38-t0r" id="rUt-N0-JBK"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="Lvs-wb-P89" userLabel="Double Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="didDoubleTapView:" destination="BYZ-38-t0r" id="0wa-sa-w8k"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <rotationGestureRecognizer id="JM8-jF-tSs">
+                    <connections>
+                        <action selector="handleRotate:" destination="BYZ-38-t0r" id="wIm-Xi-F6K"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <tapGestureRecognizer id="LSB-nG-eJi" userLabel="View Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="didTapView:" destination="BYZ-38-t0r" id="sC6-cq-a6x"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="phd-jY-0T2">
+                    <connections>
+                        <action selector="didLongPressView:" destination="BYZ-38-t0r" id="kyc-4r-7xY"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="372" y="176.76161919040482"/>
+        </scene>
+    </scenes>
+</document>
