@@ -22,7 +22,6 @@
 		37BD9CBA1D148BDF00F43934 /* StepThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD9CB91D148BDF00F43934 /* StepThreeViewController.swift */; };
 		37BD9CBC1D148BEA00F43934 /* StepFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD9CBB1D148BEA00F43934 /* StepFourViewController.swift */; };
 		37BD9CBE1D148BF100F43934 /* StepFiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD9CBD1D148BF100F43934 /* StepFiveViewController.swift */; };
-		37BD9CC01D148C0800F43934 /* StepSixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD9CBF1D148C0800F43934 /* StepSixViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +42,6 @@
 		37BD9CB91D148BDF00F43934 /* StepThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepThreeViewController.swift; sourceTree = "<group>"; };
 		37BD9CBB1D148BEA00F43934 /* StepFourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepFourViewController.swift; sourceTree = "<group>"; };
 		37BD9CBD1D148BF100F43934 /* StepFiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepFiveViewController.swift; sourceTree = "<group>"; };
-		37BD9CBF1D148C0800F43934 /* StepSixViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepSixViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +86,6 @@
 				37BD9CB91D148BDF00F43934 /* StepThreeViewController.swift */,
 				37BD9CBB1D148BEA00F43934 /* StepFourViewController.swift */,
 				37BD9CBD1D148BF100F43934 /* StepFiveViewController.swift */,
-				37BD9CBF1D148C0800F43934 /* StepSixViewController.swift */,
 				37A5F0CD1D13596000C6DAA4 /* Main.storyboard */,
 				37A5F0D01D13596000C6DAA4 /* Assets.xcassets */,
 				37A5F0D21D13596000C6DAA4 /* LaunchScreen.storyboard */,
@@ -175,7 +172,6 @@
 				37B2CF321D13739000BDF254 /* BlendViewController.swift in Sources */,
 				37BD9CBA1D148BDF00F43934 /* StepThreeViewController.swift in Sources */,
 				37BD9CB01D148AD900F43934 /* TutorialPageViewController.swift in Sources */,
-				37BD9CC01D148C0800F43934 /* StepSixViewController.swift in Sources */,
 				37BD9CB41D148BA100F43934 /* StepZeroViewController.swift in Sources */,
 				37BD9CB61D148BC300F43934 /* StepOneViewController.swift in Sources */,
 				37BD9CB21D148B6D00F43934 /* StepViewController.swift in Sources */,

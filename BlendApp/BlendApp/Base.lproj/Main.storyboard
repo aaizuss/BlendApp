@@ -118,5 +118,227 @@
             </objects>
             <point key="canvasLocation" x="372" y="176.76161919040482"/>
         </scene>
+        <!--Tutorial Page View Controller-->
+        <scene sceneID="lpo-5r-jWL">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="DhX-nQ-YsK" customClass="TutorialPageViewController" customModule="BlendApp" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AEI-fg-m3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="382" y="826"/>
+        </scene>
+        <!--Step Zero View Controller-->
+        <scene sceneID="fVM-ki-3mC">
+            <objects>
+                <viewController storyboardIdentifier="StepZero" id="NXE-oL-34F" customClass="StepZeroViewController" customModule="BlendApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5ek-as-4jo"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ywb-HD-qyg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n3o-ny-i0I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create gorgeous gradients with Blend, and set them as your wallpaper!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgP-1e-AAe">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to learn how" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUG-8g-dxj">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="ex1" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SUG-8g-dxj" firstAttribute="top" secondItem="tSx-8L-oOD" secondAttribute="bottom" constant="8" id="0Ei-kA-2k8"/>
+                            <constraint firstItem="tSx-8L-oOD" firstAttribute="top" secondItem="tgP-1e-AAe" secondAttribute="bottom" constant="8" id="Hfj-0H-61J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SUG-8g-dxj" secondAttribute="trailing" id="IDT-7o-9fv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tSx-8L-oOD" secondAttribute="trailing" id="MuN-uX-Nf6"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="tSx-8L-oOD" secondAttribute="leading" id="PZ9-Sc-5b0"/>
+                            <constraint firstItem="Ywb-HD-qyg" firstAttribute="top" secondItem="SUG-8g-dxj" secondAttribute="bottom" constant="30" id="YOF-1p-03g"/>
+                            <constraint firstItem="tgP-1e-AAe" firstAttribute="top" secondItem="5ek-as-4jo" secondAttribute="bottom" constant="30" id="a6J-cw-AOi"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="tgP-1e-AAe" secondAttribute="leading" id="hK3-rL-7EW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tgP-1e-AAe" secondAttribute="trailing" id="jUy-Bw-dVC"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="SUG-8g-dxj" secondAttribute="leading" id="xpf-Wn-fTQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="wallpaperImageView" destination="tSx-8L-oOD" id="PIf-cS-58T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ery-Uy-Myb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048.8" y="824.43778110944538"/>
+        </scene>
+        <!--Step One View Controller-->
+        <scene sceneID="Bby-sY-GvS">
+            <objects>
+                <viewController storyboardIdentifier="StepOne" id="N5L-k7-W1p" customClass="StepOneViewController" customModule="BlendApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gDq-j3-vk3"/>
+                        <viewControllerLayoutGuide type="bottom" id="wDg-Ph-I3L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NyO-XO-gy0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4wy-kP-1CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1709" y="826"/>
+        </scene>
+        <!--Step Two View Controller-->
+        <scene sceneID="vn2-Wq-zyh">
+            <objects>
+                <viewController storyboardIdentifier="StepTwo" id="Ufo-oQ-gce" customClass="StepTwoViewController" customModule="BlendApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PRd-qY-SOc"/>
+                        <viewControllerLayoutGuide type="bottom" id="JuI-Oc-FPS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Wc-KX-wip">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap in the top or bottom circle to activate it. Then, drag your finger around and watch the gradient change." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvT-w1-1I1">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="howto" translatesAutoresizingMaskIntoConstraints="NO" id="YcN-dE-18R"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="TvT-w1-1I1" secondAttribute="trailing" id="3sc-xj-2zm"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="TvT-w1-1I1" secondAttribute="leading" id="Eph-eH-oMb"/>
+                            <constraint firstItem="TvT-w1-1I1" firstAttribute="top" secondItem="PRd-qY-SOc" secondAttribute="bottom" constant="30" id="VBB-KU-o8q"/>
+                            <constraint firstItem="JuI-Oc-FPS" firstAttribute="top" secondItem="YcN-dE-18R" secondAttribute="bottom" constant="29" id="VBK-VJ-8jn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YcN-dE-18R" secondAttribute="trailing" id="hfc-wO-1dE"/>
+                            <constraint firstItem="YcN-dE-18R" firstAttribute="top" secondItem="TvT-w1-1I1" secondAttribute="bottom" constant="14" id="jTg-VK-Iie"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="YcN-dE-18R" secondAttribute="leading" id="kg2-B8-Lir"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4mT-cP-Qwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2367.1999999999998" y="824.43778110944538"/>
+        </scene>
+        <!--Step Three View Controller-->
+        <scene sceneID="LuE-GL-EEF">
+            <objects>
+                <viewController storyboardIdentifier="StepThree" id="Vzk-DS-mB2" customClass="StepThreeViewController" customModule="BlendApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hj8-1m-jlG"/>
+                        <viewControllerLayoutGuide type="bottom" id="g1E-pf-gcH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="K2R-e9-LhS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With a circle selected, drag your finger vertically to change the brightness" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAO-EL-yuk">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="brightness" translatesAutoresizingMaskIntoConstraints="NO" id="wek-c3-Nvc"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="hAO-EL-yuk" secondAttribute="leading" id="7Tt-cv-68f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hAO-EL-yuk" secondAttribute="trailing" id="GdP-Pm-nvR"/>
+                            <constraint firstItem="wek-c3-Nvc" firstAttribute="top" secondItem="hAO-EL-yuk" secondAttribute="bottom" constant="12" id="JXt-KU-zNL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wek-c3-Nvc" secondAttribute="trailing" id="Uui-Mj-dxx"/>
+                            <constraint firstItem="g1E-pf-gcH" firstAttribute="top" secondItem="wek-c3-Nvc" secondAttribute="bottom" constant="30" id="WLN-Ym-9PC"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="wek-c3-Nvc" secondAttribute="leading" id="sRg-YG-zIk"/>
+                            <constraint firstItem="hAO-EL-yuk" firstAttribute="top" secondItem="Hj8-1m-jlG" secondAttribute="bottom" constant="30" id="uPG-NL-ukR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ArB-lz-oJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3039.1999999999998" y="824.43778110944538"/>
+        </scene>
+        <!--Step Four View Controller-->
+        <scene sceneID="aBx-2h-ffj">
+            <objects>
+                <viewController storyboardIdentifier="StepFour" id="10u-9Y-9sm" customClass="StepFourViewController" customModule="BlendApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kz1-5S-54c"/>
+                        <viewControllerLayoutGuide type="bottom" id="KYV-NT-SRF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mlI-uH-XJo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To change the gradient angle, tap outside of the color pickers. Then, rotate your fingers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbh-dh-lTp">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="rotation" translatesAutoresizingMaskIntoConstraints="NO" id="zTL-Ri-V9E"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="zTL-Ri-V9E" secondAttribute="leading" id="AZo-9E-jVl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zTL-Ri-V9E" secondAttribute="trailing" id="J7i-dF-46I"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Cbh-dh-lTp" secondAttribute="leading" id="Xe1-Lc-YAF"/>
+                            <constraint firstItem="zTL-Ri-V9E" firstAttribute="top" secondItem="Cbh-dh-lTp" secondAttribute="bottom" constant="10" id="fIT-Yg-KmW"/>
+                            <constraint firstItem="KYV-NT-SRF" firstAttribute="top" secondItem="zTL-Ri-V9E" secondAttribute="bottom" constant="30" id="vrO-gk-eyP"/>
+                            <constraint firstItem="Cbh-dh-lTp" firstAttribute="top" secondItem="Kz1-5S-54c" secondAttribute="bottom" constant="30" id="ytY-pj-fmW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cbh-dh-lTp" secondAttribute="trailing" id="zRC-rV-PXe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5xw-ac-j5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3687.1999999999998" y="825.33733133433293"/>
+        </scene>
+        <!--Step Five View Controller-->
+        <scene sceneID="57f-2b-t4z">
+            <objects>
+                <viewController storyboardIdentifier="StepFive" id="0xl-GV-8en" customClass="StepFiveViewController" customModule="BlendApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nNr-i6-kvq"/>
+                        <viewControllerLayoutGuide type="bottom" id="O0O-4c-jh9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Dg-2D-6hn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake for a random gradient! You can save it or adjust it to your liking." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfQ-br-p0s">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="r1" translatesAutoresizingMaskIntoConstraints="NO" id="9wS-li-IYI"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="9wS-li-IYI" secondAttribute="leading" id="Vkj-5H-vwO"/>
+                            <constraint firstItem="9wS-li-IYI" firstAttribute="top" secondItem="IfQ-br-p0s" secondAttribute="bottom" constant="12" id="aDx-WY-Wx5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9wS-li-IYI" secondAttribute="trailing" id="cNW-Lh-bW3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IfQ-br-p0s" secondAttribute="trailing" id="itW-0I-KfN"/>
+                            <constraint firstItem="O0O-4c-jh9" firstAttribute="top" secondItem="9wS-li-IYI" secondAttribute="bottom" constant="30" id="ndF-Ne-fCV"/>
+                            <constraint firstItem="IfQ-br-p0s" firstAttribute="top" secondItem="nNr-i6-kvq" secondAttribute="bottom" constant="30" id="qH2-e0-m2U"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="IfQ-br-p0s" secondAttribute="leading" id="sLh-3D-tes"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="shakeImageView" destination="9wS-li-IYI" id="Nob-QF-iPE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Or6-SF-aad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4396" y="824.43778110944538"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="brightness" width="890" height="893"/>
+        <image name="ex1" width="458" height="896"/>
+        <image name="howto" width="890" height="893"/>
+        <image name="r1" width="458" height="896"/>
+        <image name="rotation" width="458" height="896"/>
+    </resources>
 </document>
