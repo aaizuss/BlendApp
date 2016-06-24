@@ -15,6 +15,11 @@ class StepOneViewController: StepViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        prepareTutVideo(title: "preview")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

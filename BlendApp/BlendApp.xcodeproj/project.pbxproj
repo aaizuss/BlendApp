@@ -13,6 +13,8 @@
 		37A5F0D41D13596000C6DAA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A5F0D21D13596000C6DAA4 /* LaunchScreen.storyboard */; };
 		37B2CF321D13739000BDF254 /* BlendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2CF311D13739000BDF254 /* BlendViewController.swift */; };
 		37B2CF341D13749800BDF254 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B2CF331D13749800BDF254 /* ColorPickerView.swift */; };
+		37B7EB981D1DC2F9006256D2 /* preview.mov in Resources */ = {isa = PBXBuildFile; fileRef = 37B7EB971D1DC2F9006256D2 /* preview.mov */; };
+		37B7EB9A1D1DC88E006256D2 /* StepSixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B7EB991D1DC88E006256D2 /* StepSixViewController.swift */; };
 		37BD9CAE1D1449FC00F43934 /* GradColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD9CAD1D1449FC00F43934 /* GradColors.swift */; };
 		37BD9CB01D148AD900F43934 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD9CAF1D148AD900F43934 /* TutorialPageViewController.swift */; };
 		37BD9CB21D148B6D00F43934 /* StepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD9CB11D148B6D00F43934 /* StepViewController.swift */; };
@@ -33,6 +35,8 @@
 		37A5F0D51D13596000C6DAA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37B2CF311D13739000BDF254 /* BlendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlendViewController.swift; sourceTree = "<group>"; };
 		37B2CF331D13749800BDF254 /* ColorPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		37B7EB971D1DC2F9006256D2 /* preview.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = preview.mov; sourceTree = "<group>"; };
+		37B7EB991D1DC88E006256D2 /* StepSixViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepSixViewController.swift; sourceTree = "<group>"; };
 		37BD9CAD1D1449FC00F43934 /* GradColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradColors.swift; sourceTree = "<group>"; };
 		37BD9CAF1D148AD900F43934 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
 		37BD9CB11D148B6D00F43934 /* StepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepViewController.swift; sourceTree = "<group>"; };
@@ -86,10 +90,12 @@
 				37BD9CB91D148BDF00F43934 /* StepThreeViewController.swift */,
 				37BD9CBB1D148BEA00F43934 /* StepFourViewController.swift */,
 				37BD9CBD1D148BF100F43934 /* StepFiveViewController.swift */,
+				37B7EB991D1DC88E006256D2 /* StepSixViewController.swift */,
 				37A5F0CD1D13596000C6DAA4 /* Main.storyboard */,
 				37A5F0D01D13596000C6DAA4 /* Assets.xcassets */,
 				37A5F0D21D13596000C6DAA4 /* LaunchScreen.storyboard */,
 				37A5F0D51D13596000C6DAA4 /* Info.plist */,
+				37B7EB971D1DC2F9006256D2 /* preview.mov */,
 			);
 			path = BlendApp;
 			sourceTree = "<group>";
@@ -157,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37A5F0D41D13596000C6DAA4 /* LaunchScreen.storyboard in Resources */,
+				37B7EB981D1DC2F9006256D2 /* preview.mov in Resources */,
 				37A5F0D11D13596000C6DAA4 /* Assets.xcassets in Resources */,
 				37A5F0CF1D13596000C6DAA4 /* Main.storyboard in Resources */,
 			);
@@ -172,6 +179,7 @@
 				37B2CF321D13739000BDF254 /* BlendViewController.swift in Sources */,
 				37BD9CBA1D148BDF00F43934 /* StepThreeViewController.swift in Sources */,
 				37BD9CB01D148AD900F43934 /* TutorialPageViewController.swift in Sources */,
+				37B7EB9A1D1DC88E006256D2 /* StepSixViewController.swift in Sources */,
 				37BD9CB41D148BA100F43934 /* StepZeroViewController.swift in Sources */,
 				37BD9CB61D148BC300F43934 /* StepOneViewController.swift in Sources */,
 				37BD9CB21D148B6D00F43934 /* StepViewController.swift in Sources */,

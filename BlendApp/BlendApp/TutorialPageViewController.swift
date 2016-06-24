@@ -64,6 +64,10 @@ class TutorialPageViewController: UIPageViewController {
         return storyboard!.instantiateViewController(withIdentifier: "StepFive") as! StepFiveViewController
     }
     
+    func getStepSix() -> StepSixViewController {
+        return storyboard!.instantiateViewController(withIdentifier: "StepSix") as! StepSixViewController
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -81,8 +85,9 @@ class TutorialPageViewController: UIPageViewController {
 extension TutorialPageViewController : UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
-        if viewController is StepFiveViewController {
+        if viewController is StepSixViewController {
+            return getStepFive()
+        } else if viewController is StepFiveViewController {
             return getStepFour()
         } else if viewController is StepFourViewController {
             return getStepThree()
@@ -110,6 +115,8 @@ extension TutorialPageViewController : UIPageViewControllerDataSource {
             return getStepFour()
         } else if viewController is StepFourViewController {
             return getStepFive()
+        } else if viewController is StepFiveViewController {
+            return getStepSix()
         } else {
             return nil
         }

@@ -13,9 +13,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let userDefaults = UserDefaults.standard()
+        
+        if userDefaults.bool(forKey: "firstLaunch") {
+            print("🔑 AppDelegate says Not First Launch 🔑")
+            
+            // show the blend screen
+            window = UIWindow(frame: UIScreen.main().bounds)
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let blendVC = mainStoryboard.instantiateViewController(withIdentifier: "BlendViewController") as! BlendViewController
+            window?.rootViewController = blendVC
+            window?.makeKeyAndVisible()
+            
+        } else {
+            print("AppDelegate says 💫First Launch!")
+            userDefaults.set(true, forKey: "firstLaunch")
+            
+            // show the tutorial
+            window = UIWindow(frame: UIScreen.main().bounds)
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let tutVC = mainStoryboard.instantiateViewController(withIdentifier: "TutorialViewController") as! TutorialPageViewController
+            window?.rootViewController = tutVC
+            window?.makeKeyAndVisible()
+            
+        }
+        userDefaults.synchronize()
         return true
     }
 
