@@ -388,6 +388,11 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     */
     
+    @IBAction func unwindToBlendViewController (sender: UIStoryboardSegue){
+        if sender.source.isKind(of: SavedBlendsTableViewController.self) {
+            print("segue from saved grads ✅")
+        }
+    }
     
     // MARK: Math
     func lerp(w: CGFloat, a: CGFloat, b: CGFloat) -> CGFloat {

@@ -62,7 +62,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="All"/>
                                 <connections>
-                                    <segue destination="8O8-Xk-wPs" kind="show" id="awH-QA-XzL"/>
+                                    <segue destination="8O8-Xk-wPs" kind="showDetail" id="EKn-zC-bcK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -143,6 +143,9 @@
                                     <frame key="frameInset" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="SKj-vn-Ys4" kind="unwind" identifier="UnwindFromBlendCell" unwindAction="unwindToBlendViewControllerWithSender:" id="TWF-LF-hop"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -153,6 +156,7 @@
                     <navigationItem key="navigationItem" title="Blends" id="W1h-jS-s3w"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Je6-fO-Pce" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="SKj-vn-Ys4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2152.8000000000002" y="176.76161919040482"/>
         </scene>
@@ -192,7 +196,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="6A78E1EA-5FB6-44DC-95FF-441CA87F8816" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="4EEF4A90-CD7B-4FA4-9705-1746CF1A1251" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -456,7 +460,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="6A78E1EA-5FB6-44DC-95FF-441CA87F8816" width="458" height="896">
+        <image name="4EEF4A90-CD7B-4FA4-9705-1746CF1A1251" width="458" height="896">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

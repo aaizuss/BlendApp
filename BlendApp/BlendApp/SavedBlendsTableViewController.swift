@@ -59,16 +59,6 @@ class SavedBlendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gradientCell", for: indexPath) as! SavedBlendsTableViewCell
 
-        // Configure the cell...
-//        var rotation: Float = 0.0
-//        let gradInfo: NSDictionary = savedGrads[indexPath.row] as! NSDictionary
-//        let topColorData = gradInfo["top"] as! Data
-//        let bottomColorData = gradInfo["bottom"] as! Data
-//        if let savedRotation = gradInfo["rotation"] as? Float {
-//            rotation = savedRotation
-//        }
-//        let topColor = NSKeyedUnarchiver.unarchiveObject(with: topColorData) as! UIColor
-//        let bottomColor = NSKeyedUnarchiver.unarchiveObject(with: bottomColorData) as! UIColor
         let (topColor, bottomColor, rotation) = grabSavedInfoFor(indexPath)
         let cellGradLayer = CAGradientLayer()
         cell.backgroundView = UIView(frame: cell.frame)
@@ -127,16 +117,27 @@ class SavedBlendsTableViewController: UITableViewController {
         return true
     }
     
-
-    /*
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("about to perform segue")
+        self.performSegue(withIdentifier: "UnwindFromBlendCell", sender: self)
+    }
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "UnwindFromBlendCell" {
+            let indexPath = tableView.indexPathForSelectedRow
+            let (topColor, bottomColor, rotation) = grabSavedInfoFor(indexPath!)
+            selectedTopColor = topColor
+            selectedBotColor = bottomColor
+            if let blendViewController = segue.destination as? BlendViewController {
+                blendViewController.topColor = selectedTopColor
+                blendViewController.bottomColor = selectedBotColor
+                blendViewController.gradRotation = rotation
+            }
+        }
     }
-    */
+    
     
     // move to another file?
     func getColorFromData(data: Data) -> UIColor {
