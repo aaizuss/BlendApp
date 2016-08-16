@@ -14,32 +14,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        
         let userDefaults = UserDefaults.standard
         
         if userDefaults.bool(forKey: "firstLaunch") {
             print("🔑 AppDelegate says Not First Launch 🔑")
-            
-            // show the blend screen
-            window = UIWindow(frame: UIScreen.main.bounds)
-            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let blendVC = mainStoryboard.instantiateViewController(withIdentifier: "BlendViewController") as! BlendViewController
-            window?.rootViewController = blendVC
-            window?.makeKeyAndVisible()
-            
+            showBlendScreen()
         } else {
             print("AppDelegate says 💫First Launch!")
             userDefaults.set(true, forKey: "firstLaunch")
-            
-            // show the tutorial
-            window = UIWindow(frame: UIScreen.main.bounds)
-            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let tutVC = mainStoryboard.instantiateViewController(withIdentifier: "TutorialViewController") as! TutorialPageViewController
-            window?.rootViewController = tutVC
-            window?.makeKeyAndVisible()
-            
+            showTutorial()
         }
         userDefaults.synchronize()
         return true
+    }
+    
+    func showBlendScreen() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let blendVC = mainStoryboard.instantiateViewController(withIdentifier: "BlendViewController") as! BlendViewController
+        window?.rootViewController = blendVC
+        window?.makeKeyAndVisible()
+    }
+    
+    func showTutorial() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let tutVC = mainStoryboard.instantiateViewController(withIdentifier: "TutorialViewController") as! TutorialPageViewController
+        window?.rootViewController = tutVC
+        window?.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
