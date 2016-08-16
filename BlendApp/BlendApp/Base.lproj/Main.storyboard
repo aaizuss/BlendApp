@@ -51,7 +51,9 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hb3-tV-fvK">
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="didTapSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IqA-JM-oow"/>
                                 </connections>
@@ -60,9 +62,11 @@
                                 <frame key="frameInset" minX="16" minY="28" width="30" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="All"/>
+                                <state key="normal" title="All">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <segue destination="8O8-Xk-wPs" kind="showDetail" id="EKn-zC-bcK"/>
+                                    <segue destination="IhN-uw-6UL" kind="show" identifier="ShowSavedBlends" id="6hg-3U-ze2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -131,16 +135,16 @@
         <scene sceneID="UIt-Xq-RMq">
             <objects>
                 <tableViewController id="LYR-Im-xiC" customClass="SavedBlendsTableViewController" customModule="BlendApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="KXg-sL-exu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" id="KXg-sL-exu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="gradientCell" id="lN7-1W-ZY3" customClass="SavedBlendsTableViewCell" customModule="BlendApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="115"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lN7-1W-ZY3" id="dGZ-b4-gNf">
-                                    <frame key="frameInset" width="375" height="100"/>
+                                    <frame key="frameInset" width="375" height="115"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -153,12 +157,18 @@
                             <outlet property="delegate" destination="LYR-Im-xiC" id="W6Q-ek-Iwf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Blends" id="W1h-jS-s3w"/>
+                    <navigationItem key="navigationItem" title="Blends" id="W1h-jS-s3w">
+                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="ziv-Wc-73T">
+                            <connections>
+                                <segue destination="SKj-vn-Ys4" kind="unwind" identifier="BackToBlend" unwindAction="unwindToBlendViewControllerWithSender:" id="n8e-7Y-8Tr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Je6-fO-Pce" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="SKj-vn-Ys4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2152.8000000000002" y="176.76161919040482"/>
+            <point key="canvasLocation" x="2525.5999999999999" y="176.76161919040482"/>
         </scene>
         <!--Tutorial Page View Controller-->
         <scene sceneID="lpo-5r-jWL">
@@ -196,7 +206,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="4EEF4A90-CD7B-4FA4-9705-1746CF1A1251" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="AFD366B3-237B-46C4-AB52-E1685A618779" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -441,26 +451,26 @@
             <point key="canvasLocation" x="5040.579710144928" y="823.36956521739137"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="ZXo-Fb-5K2">
+        <scene sceneID="A33-VO-HLC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8O8-Xk-wPs" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IhN-uw-6UL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="var-W1-abP">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BFs-IY-oS9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="LYR-Im-xiC" kind="relationship" relationship="rootViewController" id="OS9-fd-Lzz"/>
+                        <segue destination="LYR-Im-xiC" kind="relationship" relationship="rootViewController" id="C2y-HH-7S5"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mfe-r7-SfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V9b-vV-tqO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1213.5999999999999" y="176.76161919040482"/>
+            <point key="canvasLocation" x="1584.8" y="176.76161919040482"/>
         </scene>
     </scenes>
     <resources>
-        <image name="4EEF4A90-CD7B-4FA4-9705-1746CF1A1251" width="458" height="896">
+        <image name="AFD366B3-237B-46C4-AB52-E1685A618779" width="458" height="896">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

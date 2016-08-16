@@ -12,7 +12,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // MARK: Properties
     var colorIndicator = UIView()
-    //let transitionManager = TransitionManager()
+    let transitionManager = TransitionManager()
     
     /* The Gradient */
     var gradLayer = CAGradientLayer()
@@ -49,7 +49,6 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
         showGradient()
         updateIndicatorLocationFromColors(t: topColor, b: bottomColor)
     }
@@ -378,18 +377,22 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowSavedBlends" {
+            let toViewController = segue.destination as UIViewController
+            toViewController.transitioningDelegate = self.transitionManager
+        }
     }
-    */
+    
     
     @IBAction func unwindToBlendViewController (sender: UIStoryboardSegue){
-        if sender.source.isKind(of: SavedBlendsTableViewController.self) {
+        if sender.identifier == "BackToBlend" {
+            print("unwinding")
+        }
+        else if sender.source.isKind(of: SavedBlendsTableViewController.self) {
             print("segue from saved grads ✅")
         }
     }
