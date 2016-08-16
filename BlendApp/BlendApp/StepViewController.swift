@@ -27,7 +27,7 @@ class StepViewController: UIViewController {
     }
     
     func prepareTutVideo(title: String) {
-        let videoURL: URL = Bundle.main().urlForResource(title, withExtension: "mov")!
+        let videoURL: URL = Bundle.main.url(forResource: title, withExtension: "mov")!
         player = AVPlayer(url: videoURL)
         player?.actionAtItemEnd = .none
         player?.isMuted = true
@@ -41,7 +41,7 @@ class StepViewController: UIViewController {
         player?.play()
         
         // loop video
-        NotificationCenter.default().addObserver(self, selector: #selector(self.loopVideo), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.loopVideo), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
     }
     
     func loopVideo() {

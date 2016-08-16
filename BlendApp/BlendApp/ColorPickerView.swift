@@ -34,10 +34,10 @@ class ColorPickerView: UIView, UIGestureRecognizerDelegate {
     
     func createCircle() {
         viewCenter = CGPoint(x: frame.width/2, y: frame.height/2)
-        backgroundColor = UIColor.clear()
+        backgroundColor = UIColor.clear
         layer.cornerRadius = frame.width/2 // makes the view a circle
         layer.borderWidth = 3
-        layer.borderColor = UIColor.white().cgColor
+        layer.borderColor = UIColor.white.cgColor
     }
     
     /// Draw the indicator in the circle
@@ -45,7 +45,7 @@ class ColorPickerView: UIView, UIGestureRecognizerDelegate {
         let indicator = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: 23))
         indicator.center = CGPoint(x: viewCenter.x, y: viewCenter.y)
         indicator.layer.cornerRadius = indicator.frame.width/2
-        indicator.backgroundColor = UIColor.white()
+        indicator.backgroundColor = UIColor.white
         indicator.alpha = 0.5
         indicator.isUserInteractionEnabled = true
         return indicator

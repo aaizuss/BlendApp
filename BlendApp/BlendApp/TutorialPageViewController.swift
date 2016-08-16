@@ -15,10 +15,10 @@ class TutorialPageViewController: UIPageViewController {
         
         setViewControllers([getStepZero()], direction: .forward, animated: false, completion: nil)
         dataSource = self
-        view.backgroundColor = .clear() // set color behind page dots
+        view.backgroundColor = UIColor.clear // set color behind page dots
         // set color of page indicator
-        UIPageControl.appearance().pageIndicatorTintColor = UIColor.lightGray()
-        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.black()
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.lightGray
+        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor.black
         
     }
 

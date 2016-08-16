@@ -234,11 +234,11 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: Shake
     
-    override func canBecomeFirstResponder() -> Bool {
-        return true
-    }
+//    override func canBecomeFirstResponder() -> Bool {
+//        return true
+//    }
     
-    // weird bug when you try to change these colors
+    // todo: fix weird bug when you try to change these colors
     override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             print("shake begin detected")
@@ -329,11 +329,11 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
             let settingsURL = URL(string: "prefs:root=Wallpaper")
             if let url = settingsURL {
                 //UIApplication.shared().openURL(url)
-                UIApplication.shared().open(url, options: [:], completionHandler: nil)
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
             else if let url = URL(string: "prefs:root=General") {
                 //UIApplication.shared().openURL(url)
-                UIApplication.shared().open(url, options: [:], completionHandler: nil)
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             } else {
                 let oopsController = UIAlertController(title: "Oops!", message: "Sorry, you'll have to go to settings manually.", preferredStyle: .alert)
                 let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)

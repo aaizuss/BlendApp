@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StepFiveViewController: StepViewController {
+class StepFiveViewController: StepViewController, CAAnimationDelegate {
     
     @IBOutlet weak var shakeImageView: UIImageView!
     
@@ -46,7 +46,7 @@ class StepFiveViewController: StepViewController {
         shakeImageView.layer.add(animation, forKey: "wiggleAnimation");
     }
     
-    override func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         wiggleAnimation()
     }
     
