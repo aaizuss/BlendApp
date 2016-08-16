@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		379C28B81D638E4E00822756 /* saved-grads.plist in Resources */ = {isa = PBXBuildFile; fileRef = 379C28B71D638E4E00822756 /* saved-grads.plist */; };
 		37A5F0CA1D13596000C6DAA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5F0C91D13596000C6DAA4 /* AppDelegate.swift */; };
 		37A5F0CF1D13596000C6DAA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A5F0CD1D13596000C6DAA4 /* Main.storyboard */; };
 		37A5F0D11D13596000C6DAA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37A5F0D01D13596000C6DAA4 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		379C28B71D638E4E00822756 /* saved-grads.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "saved-grads.plist"; sourceTree = "<group>"; };
 		37A5F0C61D13596000C6DAA4 /* BlendApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlendApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A5F0C91D13596000C6DAA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37A5F0CE1D13596000C6DAA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				37A5F0CD1D13596000C6DAA4 /* Main.storyboard */,
 				37A5F0D01D13596000C6DAA4 /* Assets.xcassets */,
 				37A5F0D21D13596000C6DAA4 /* LaunchScreen.storyboard */,
+				379C28B71D638E4E00822756 /* saved-grads.plist */,
 				37A5F0D51D13596000C6DAA4 /* Info.plist */,
 				37B7EB971D1DC2F9006256D2 /* preview.mov */,
 			);
@@ -166,6 +169,7 @@
 				37B7EB981D1DC2F9006256D2 /* preview.mov in Resources */,
 				37A5F0D11D13596000C6DAA4 /* Assets.xcassets in Resources */,
 				37A5F0CF1D13596000C6DAA4 /* Main.storyboard in Resources */,
+				379C28B81D638E4E00822756 /* saved-grads.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -234,10 +234,6 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: Shake
     
-//    override func canBecomeFirstResponder() -> Bool {
-//        return true
-//    }
-    
     // todo: fix weird bug when you try to change these colors
     override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
@@ -261,7 +257,6 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
 
-    
     
     // MARK: Picker View Utils
     
@@ -318,6 +313,42 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     @IBAction func didTapSave(_ sender: UIButton) {
+        saveColorDataToPlist()
+        saveToAlbum()
+    }
+    
+    func saveToAlbum() {
+        UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, true, 0.0)
+        gradLayer.render(in: UIGraphicsGetCurrentContext()!)
+        let wallpaper = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        UIImageWriteToSavedPhotosAlbum(wallpaper!, nil, nil, nil)
+        
+        showSaveAlert()
+    }
+    
+    func saveColorDataToPlist() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let pathForPlistFile = appDelegate.plistPathInDocDirectory
+        let topColorData: Data = NSKeyedArchiver.archivedData(withRootObject: topColor)
+        let bottomColorData: Data = NSKeyedArchiver.archivedData(withRootObject: bottomColor)
+        let color: [String: Any] = ["top":topColorData, "bottom":bottomColorData, "rotation":gradRotation]
+        
+        let data: Data = FileManager.default.contents(atPath: pathForPlistFile)!
+        
+        addColorInfoToPlist(plistFilePath: pathForPlistFile, colorInfo: color, plistContent: data)
+    }
+    
+    func addColorInfoToPlist(plistFilePath: String, colorInfo: [String:Any], plistContent: Data) {
+        do {
+            let gradArray = try PropertyListSerialization.propertyList(from: plistContent, options: .mutableContainersAndLeaves, format: nil) as AnyObject
+            gradArray.add!(colorInfo)
+            
+            _ = gradArray.write(toFile: plistFilePath, atomically: true)
+            print("path for plist file after saving: \(plistFilePath)")
+        } catch {
+            print("an error occurred while writing to plist")
+        }
     }
     
     /// Show confirmation that image was saved successfully

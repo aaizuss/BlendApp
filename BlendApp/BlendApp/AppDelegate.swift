@@ -12,12 +12,37 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var plistPathInDocDirectory: String = String()
+    
+    func preparePlistForUse() {
+        let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        
+        plistPathInDocDirectory = rootPath.appending("/saved-grads.plist")
+        
+        let fileDoesNotExist = !FileManager.default.fileExists(atPath: plistPathInDocDirectory)
+        
+        if fileDoesNotExist {
+            let plistPathInBundle = Bundle.main.path(forResource: "saved-grads", ofType: "plist") as  String!
+            //print("plist path in bundle is \(plistPathInBundle)")
+            
+            do {
+                if let plistPathInBundle = plistPathInBundle {
+                    try FileManager.default.copyItem(atPath: plistPathInBundle, toPath: plistPathInDocDirectory)
+                } else {
+                    print("plistPathInBundle couldn't be cast to string... probably nil")
+                }
+            } catch {
+                print("error occurred when trying to copy plist to documents directory: \(error)")
+            }
+        }
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-        
+        preparePlistForUse()
         let userDefaults = UserDefaults.standard
+        let launchedBefore = userDefaults.bool(forKey: "firstLaunch")
         
-        if userDefaults.bool(forKey: "firstLaunch") {
+        if launchedBefore {
             print("🔑 AppDelegate says Not First Launch 🔑")
             showBlendScreen()
         } else {
@@ -61,6 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        preparePlistForUse()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
