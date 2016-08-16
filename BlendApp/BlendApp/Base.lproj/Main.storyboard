@@ -56,6 +56,15 @@
                                     <action selector="didTapSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IqA-JM-oow"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdV-M3-VJC">
+                                <frame key="frameInset" minX="16" minY="28" width="30" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="All"/>
+                                <connections>
+                                    <segue destination="8O8-Xk-wPs" kind="show" id="awH-QA-XzL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -118,6 +127,35 @@
             </objects>
             <point key="canvasLocation" x="372" y="176.76161919040482"/>
         </scene>
+        <!--Blends-->
+        <scene sceneID="UIt-Xq-RMq">
+            <objects>
+                <tableViewController id="LYR-Im-xiC" customClass="SavedBlendsTableViewController" customModule="BlendApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="KXg-sL-exu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="gradientCell" id="lN7-1W-ZY3" customClass="SavedBlendsTableViewCell" customModule="BlendApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lN7-1W-ZY3" id="dGZ-b4-gNf">
+                                    <frame key="frameInset" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LYR-Im-xiC" id="Fp3-Yo-JUo"/>
+                            <outlet property="delegate" destination="LYR-Im-xiC" id="W6Q-ek-Iwf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Blends" id="W1h-jS-s3w"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Je6-fO-Pce" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2152.8000000000002" y="176.76161919040482"/>
+        </scene>
         <!--Tutorial Page View Controller-->
         <scene sceneID="lpo-5r-jWL">
             <objects>
@@ -154,7 +192,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="F3C4E8D3-6065-479B-9EE0-DDC94C1091FD" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="6A78E1EA-5FB6-44DC-95FF-441CA87F8816" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -398,9 +436,27 @@
             </objects>
             <point key="canvasLocation" x="5040.579710144928" y="823.36956521739137"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZXo-Fb-5K2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8O8-Xk-wPs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="var-W1-abP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LYR-Im-xiC" kind="relationship" relationship="rootViewController" id="OS9-fd-Lzz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mfe-r7-SfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1213.5999999999999" y="176.76161919040482"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="F3C4E8D3-6065-479B-9EE0-DDC94C1091FD" width="458" height="896">
+        <image name="6A78E1EA-5FB6-44DC-95FF-441CA87F8816" width="458" height="896">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
