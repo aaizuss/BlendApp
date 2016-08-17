@@ -151,6 +151,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func handleRotate(_ sender: UIRotationGestureRecognizer) {
+        print("calling rotate")
         if topCircle.tag == 100 && bottomCircle.tag == 101 {
             
             // Only apply the rotation when starting and continuing to rotate

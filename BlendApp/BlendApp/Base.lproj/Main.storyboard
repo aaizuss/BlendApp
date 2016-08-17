@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0e5-YG-e5z" customClass="ColorPickerView" customModule="BlendApp" customModuleProvider="target">
@@ -85,6 +85,7 @@
                             <outletCollection property="gestureRecognizers" destination="Lvs-wb-P89" appends="YES" id="63g-ge-dOm"/>
                             <outletCollection property="gestureRecognizers" destination="LSB-nG-eJi" appends="YES" id="FPS-FN-tyE"/>
                             <outletCollection property="gestureRecognizers" destination="phd-jY-0T2" appends="YES" id="pvm-o0-Yaj"/>
+                            <outletCollection property="gestureRecognizers" destination="Sa1-tu-SxD" appends="YES" id="a4H-mt-5YH"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="5ZB-4F-mlA"/>
@@ -114,21 +115,21 @@
                         <action selector="didDoubleTapView:" destination="BYZ-38-t0r" id="0wa-sa-w8k"/>
                     </connections>
                 </tapGestureRecognizer>
-                <rotationGestureRecognizer id="JM8-jF-tSs">
-                    <connections>
-                        <action selector="handleRotate:" destination="BYZ-38-t0r" id="wIm-Xi-F6K"/>
-                    </connections>
-                </rotationGestureRecognizer>
                 <tapGestureRecognizer id="LSB-nG-eJi" userLabel="View Tap Gesture Recognizer">
                     <connections>
                         <action selector="didTapView:" destination="BYZ-38-t0r" id="sC6-cq-a6x"/>
                     </connections>
                 </tapGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="2" id="phd-jY-0T2">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1.2" id="phd-jY-0T2">
                     <connections>
                         <action selector="didLongPressView:" destination="BYZ-38-t0r" id="kyc-4r-7xY"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <rotationGestureRecognizer id="Sa1-tu-SxD">
+                    <connections>
+                        <action selector="handleRotate:" destination="BYZ-38-t0r" id="YUd-FY-LOF"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2477.5999999999999" y="183.05847076461771"/>
         </scene>
@@ -137,15 +138,15 @@
             <objects>
                 <tableViewController id="LYR-Im-xiC" customClass="SavedBlendsTableViewController" customModule="BlendApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" id="KXg-sL-exu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="gradientCell" id="lN7-1W-ZY3" customClass="SavedBlendsTableViewCell" customModule="BlendApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="115"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="115"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lN7-1W-ZY3" id="dGZ-b4-gNf">
-                                    <frame key="frameInset" width="375" height="115"/>
+                                    <frame key="frameInset" width="414" height="115"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -177,7 +178,7 @@
                 <pageViewController storyboardIdentifier="TutorialViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="DhX-nQ-YsK" customClass="TutorialPageViewController" customModule="BlendApp" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AEI-fg-m3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="382" y="826"/>
+            <point key="canvasLocation" x="-567" y="-637"/>
         </scene>
         <!--Step Zero View Controller-->
         <scene sceneID="fVM-ki-3mC">
@@ -188,7 +189,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ywb-HD-qyg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="n3o-ny-i0I">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create gorgeous gradients with Blend, and set them as your wallpaper!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgP-1e-AAe">
@@ -207,7 +208,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="ED1E297E-AE30-4EAB-ACC3-346EA5155EA7" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="16381D79-B6F1-4A44-ACBF-300D96DFFB34" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -229,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ery-Uy-Myb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1048.8" y="824.43778110944538"/>
+            <point key="canvasLocation" x="198" y="-649"/>
         </scene>
         <!--Step One View Controller-->
         <scene sceneID="Bby-sY-GvS">
@@ -240,14 +241,14 @@
                         <viewControllerLayoutGuide type="bottom" id="wDg-Ph-I3L"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NyO-XO-gy0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wy-kP-1CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2647.1999999999998" y="825.33733133433293"/>
+            <point key="canvasLocation" x="876" y="-648"/>
         </scene>
         <!--Step Two View Controller-->
         <scene sceneID="vn2-Wq-zyh">
@@ -258,7 +259,7 @@
                         <viewControllerLayoutGuide type="bottom" id="JuI-Oc-FPS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3Wc-KX-wip">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap in the top or bottom circle to activate it. Then, drag your finger around and watch the gradient change." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvT-w1-1I1">
@@ -285,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4mT-cP-Qwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3306.4000000000001" y="824.43778110944538"/>
+            <point key="canvasLocation" x="1535" y="-649"/>
         </scene>
         <!--Step Three View Controller-->
         <scene sceneID="LuE-GL-EEF">
@@ -296,7 +297,7 @@
                         <viewControllerLayoutGuide type="bottom" id="g1E-pf-gcH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="K2R-e9-LhS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With a circle selected, drag your finger vertically to change the brightness" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAO-EL-yuk">
@@ -323,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ArB-lz-oJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4917.6000000000004" y="824.43778110944538"/>
+            <point key="canvasLocation" x="2177" y="-637"/>
         </scene>
         <!--Step Four View Controller-->
         <scene sceneID="aBx-2h-ffj">
@@ -334,7 +335,7 @@
                         <viewControllerLayoutGuide type="bottom" id="KYV-NT-SRF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mlI-uH-XJo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To change the gradient angle, tap outside of the color pickers. Then, rotate your fingers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbh-dh-lTp">
@@ -361,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xw-ac-j5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5565.6000000000004" y="825.33733133433293"/>
+            <point key="canvasLocation" x="2818" y="-637"/>
         </scene>
         <!--Step Five View Controller-->
         <scene sceneID="57f-2b-t4z">
@@ -372,7 +373,7 @@
                         <viewControllerLayoutGuide type="bottom" id="O0O-4c-jh9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Dg-2D-6hn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake for a random gradient! You can save it or adjust it to your liking." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfQ-br-p0s">
@@ -402,7 +403,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Or6-SF-aad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6274.3999999999996" y="824.43778110944538"/>
+            <point key="canvasLocation" x="3553" y="-649"/>
         </scene>
         <!--Step Six View Controller-->
         <scene sceneID="PIh-gx-zmc">
@@ -413,7 +414,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Z8O-HU-3Ht"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="URh-2x-sgD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View all of your saved blends by sliding your finger right " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNb-cU-g29">
@@ -425,17 +426,19 @@
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="saved-ex" translatesAutoresizingMaskIntoConstraints="NO" id="Z6Y-9s-yWJ"/>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVK-lP-jxp">
-                                <frame key="frameInset" minX="166" minY="118" width="82" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVK-lP-jxp">
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Start Blend!">
                                     <color key="titleColor" red="0.98431372549019602" green="0.11745570408762156" blue="0.54938663848627234" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowBlend" id="kdy-i9-LgE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="rVK-lP-jxp" firstAttribute="centerX" secondItem="URh-2x-sgD" secondAttribute="centerX" id="3qb-Gd-EhP"/>
                             <constraint firstAttribute="leadingMargin" secondItem="SNb-cU-g29" secondAttribute="leading" id="DQd-d8-uDp"/>
                             <constraint firstItem="Z6Y-9s-yWJ" firstAttribute="centerX" secondItem="URh-2x-sgD" secondAttribute="centerX" id="KdN-eR-aoA"/>
                             <constraint firstItem="SNb-cU-g29" firstAttribute="top" secondItem="dMF-Fm-QPL" secondAttribute="bottom" constant="30" id="Q7W-4p-Rb9"/>
@@ -443,13 +446,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Z6Y-9s-yWJ" secondAttribute="trailing" id="hQR-Mm-Fhe"/>
                             <constraint firstItem="Z8O-HU-3Ht" firstAttribute="top" secondItem="Z6Y-9s-yWJ" secondAttribute="bottom" constant="30" id="oR6-lF-DUp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SNb-cU-g29" secondAttribute="trailing" id="odD-iy-gKP"/>
+                            <constraint firstItem="rVK-lP-jxp" firstAttribute="top" secondItem="SNb-cU-g29" secondAttribute="bottom" constant="8" id="qUl-FB-070"/>
                             <constraint firstItem="Z6Y-9s-yWJ" firstAttribute="top" secondItem="SNb-cU-g29" secondAttribute="bottom" constant="41" id="ypH-Y3-7Mh"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yyU-09-ukR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6917.6000000000004" y="821.73913043478262"/>
+            <point key="canvasLocation" x="4260" y="-649"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="N51-xt-GRj">
@@ -473,7 +477,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ED1E297E-AE30-4EAB-ACC3-346EA5155EA7" width="458" height="896">
+        <image name="16381D79-B6F1-4A44-ACBF-300D96DFFB34" width="458" height="896">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
