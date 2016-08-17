@@ -8,6 +8,8 @@
 
 import UIKit
 
+// idea: 3d touch on blend view controller to show saved gradients...
+
 class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
     
     private var presenting = true
@@ -37,7 +39,7 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
     func handleOnstagePan(pan: UIScreenEdgePanGestureRecognizer){
         let translation = pan.translation(in: pan.view!)
         let d = translation.x / (pan.view!.bounds.width) * 0.5
-        let thresholdCrossed = d > 0.2
+
         switch(pan.state) {
         case .began:
             self.interactive = true
@@ -48,34 +50,38 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
             break
         default:
             self.interactive = false
-            if thresholdCrossed {
-                finish()
-            }
-            else {
-                cancel()
-            }
+//            if d > 0.2 {
+//                finish()
+//            }
+//            else {
+//                cancel()
+//            }
+            finish()
         }
     }
     
-    func handleOffstagePan(pan: UIScreenEdgePanGestureRecognizer) {
+    func handleOffstagePan(pan: UIPanGestureRecognizer) {
         let translation = pan.translation(in: pan.view!)
         let d = translation.x / pan.view!.bounds.width * -0.5
-        let thresholdCrossed = d > 0.2
         
-        switch (pan.state) {
-        case .began:
-            interactive = true
-            destViewController.performSegue(withIdentifier: "BackToBlendFromNav", sender: self)
-            break
-        case .changed:
-            update(d)
-            break
-        default:
-            interactive = false
-            if thresholdCrossed {
+        //  only respond if the pan is moving to the right
+        if pan.velocity(in: pan.view!).x > 0 {
+            switch (pan.state) {
+            case .began:
+                interactive = true
+                destViewController.performSegue(withIdentifier: "BackToBlendFromNav", sender: self)
+                break
+            case .changed:
+                update(d)
+                break
+            default:
+                interactive = false
+//                if d > 0.2 {
+//                    finish()
+//                } else {
+//                    cancel()
+//                }
                 finish()
-            } else {
-                cancel()
             }
         }
     }
@@ -126,6 +132,7 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
             }, completion: { finished in
                 if transitionContext.transitionWasCancelled {
                     transitionContext.completeTransition(false)
+                    print("transition cancelled")
                 } else {
                     transitionContext.completeTransition(true)
                 }
