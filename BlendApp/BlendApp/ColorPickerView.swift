@@ -35,7 +35,7 @@ class ColorPickerView: UIView, UIGestureRecognizerDelegate {
     func createCircle() {
         viewCenter = CGPoint(x: frame.width/2, y: frame.height/2)
         backgroundColor = UIColor.clear
-        layer.cornerRadius = frame.width/2 // makes the view a circle
+        layer.cornerRadius = frame.width/2 
         layer.borderWidth = 3
         layer.borderColor = UIColor.white.cgColor
     }

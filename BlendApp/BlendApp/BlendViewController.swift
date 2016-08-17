@@ -52,6 +52,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewWillAppear(true)
         showGradient()
         updateIndicatorLocationFromColors(t: topColor, b: bottomColor)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,7 +84,6 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         let pickerView = sender.view as? ColorPickerView
         
         if pickerView == topCircle {
-            // reveal the top circle
             activatePicker(topCircle)
         }
         
@@ -91,7 +91,8 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
             activatePicker(bottomCircle)
         }
         
-        pickerView?.alpha = 0.7
+        //pickerView?.alpha = 0.7
+        pickerView?.fade(toAlpha: 0.8, withDuration: 0.2)
         colorIndicator = pickerView!.indicator
         
         // Make the Indicator draggable in the picker
@@ -123,12 +124,10 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         let viewTop:CGFloat = 150
         let b = lerp(w: unlerp(x: touchPointY, x0: viewBottom, x1: viewTop), a: 0, b: 1)
         if topCircle.tag == 111 {
-            // adjust top brightness
             brightTop = b
             topColor = UIColor(hue: hueTop, saturation: satTop, brightness: brightTop, alpha: a)
         }
         if bottomCircle.tag == 111 {
-            // adjust bottom brightness
             brightBot = b
             bottomColor = UIColor(hue: hueBot, saturation: satBot, brightness: brightBot, alpha: a)
         }
@@ -243,11 +242,8 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     
-    
-    
     // MARK: Shake
     
-    // todo: fix weird bug when you try to change these colors
     override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             print("shake begin detected")
@@ -296,13 +292,14 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         if picker == topCircle {
             
             print("activating top picker")
-            
+            print("top circle frame: \(topCircle.frame)")
             // Change tags to indicate which circle is active
             topCircle.tag = 111
             // bottom circle tag is 101 unless it is currently active
             bottomCircle.tag = 101
             
-            bottomCircle.alpha = 0.05
+            //bottomCircle.alpha = 0.05
+            bottomCircle.fade(toAlpha: 0.05, withDuration: 0.3)
             topCircle.indicator.center = picker.pointAtHueSaturation(hue: hueTop, saturation: satTop)
             
         }
@@ -310,12 +307,13 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         if picker == bottomCircle {
             
             print("activating bottom picker")
-            
+
             // top circle tag is 100 unless it is currently active
             topCircle.tag = 100
             bottomCircle.tag = 111
             
-            topCircle.alpha = 0.05
+            //topCircle.alpha = 0.05
+            topCircle.fade(toAlpha: 0.05, withDuration: 0.3)
             bottomCircle.indicator.center = picker.pointAtHueSaturation(hue: hueBot, saturation: satBot)
         }
     }

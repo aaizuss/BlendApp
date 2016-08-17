@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -58,11 +59,9 @@
                                     <action selector="didTapSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IqA-JM-oow"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdV-M3-VJC">
-                                <frame key="frameInset" minX="16" minY="28" width="30" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdV-M3-VJC">
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="All">
+                                <state key="normal" title="My Blends">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -76,6 +75,8 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Mdd-eQ-UA2" secondAttribute="bottom" constant="26" id="4WH-y1-hfz"/>
                             <constraint firstItem="0e5-YG-e5z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="HoT-95-8hI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hb3-tV-fvK" secondAttribute="trailing" id="MWH-Oz-K8T"/>
+                            <constraint firstItem="sdV-M3-VJC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="ZKN-3j-ZkE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sdV-M3-VJC" secondAttribute="trailing" id="aNY-h6-TEq"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hb3-tV-fvK" secondAttribute="bottom" constant="26" id="b95-n1-BsG"/>
                             <constraint firstItem="Mdd-eQ-UA2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i53-jj-Xbf"/>
                             <constraint firstItem="0e5-YG-e5z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rEy-EE-q4X"/>
@@ -160,11 +161,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Blends" id="W1h-jS-s3w">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="ziv-Wc-73T">
-                            <connections>
-                                <segue destination="SKj-vn-Ys4" kind="unwind" identifier="BackToBlend" unwindAction="unwindToBlendViewControllerWithSender:" id="n8e-7Y-8Tr"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Back" id="ziv-Wc-73T">
+                                <connections>
+                                    <segue destination="SKj-vn-Ys4" kind="unwind" identifier="BackToBlend" unwindAction="unwindToBlendViewControllerWithSender:" id="n8e-7Y-8Tr"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Help" id="9Cq-7I-hi4">
+                                <connections>
+                                    <segue destination="DhX-nQ-YsK" kind="presentation" identifier="ShowTutorial" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="P0A-ki-fSz"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Je6-fO-Pce" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -208,7 +216,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="16381D79-B6F1-4A44-ACBF-300D96DFFB34" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="317833BE-8E2E-4CED-92B1-8C345ED996BF" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -432,7 +440,7 @@
                                     <color key="titleColor" red="0.98431372549019602" green="0.11745570408762156" blue="0.54938663848627234" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowBlend" id="kdy-i9-LgE"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="ShowBlend" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="kdy-i9-LgE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -477,7 +485,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="16381D79-B6F1-4A44-ACBF-300D96DFFB34" width="458" height="896">
+        <image name="317833BE-8E2E-4CED-92B1-8C345ED996BF" width="458" height="896">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
