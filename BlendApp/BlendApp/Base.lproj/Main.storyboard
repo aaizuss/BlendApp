@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -66,7 +66,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="IhN-uw-6UL" kind="show" identifier="ShowSavedBlends" id="6hg-3U-ze2"/>
+                                    <segue destination="RXf-zZ-niO" kind="show" identifier="ShowSavedBlends" id="CMq-4x-Z3T"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -87,6 +87,7 @@
                             <outletCollection property="gestureRecognizers" destination="phd-jY-0T2" appends="YES" id="pvm-o0-Yaj"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="5ZB-4F-mlA"/>
                     <connections>
                         <outlet property="bottomCircle" destination="Mdd-eQ-UA2" id="Gsp-zr-dYe"/>
                         <outlet property="topCircle" destination="0e5-YG-e5z" id="Kj9-mQ-BCc"/>
@@ -123,13 +124,13 @@
                         <action selector="didTapView:" destination="BYZ-38-t0r" id="sC6-cq-a6x"/>
                     </connections>
                 </tapGestureRecognizer>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="phd-jY-0T2">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="2" id="phd-jY-0T2">
                     <connections>
                         <action selector="didLongPressView:" destination="BYZ-38-t0r" id="kyc-4r-7xY"/>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="372" y="176.76161919040482"/>
+            <point key="canvasLocation" x="2477.5999999999999" y="183.05847076461771"/>
         </scene>
         <!--Blends-->
         <scene sceneID="UIt-Xq-RMq">
@@ -158,7 +159,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Blends" id="W1h-jS-s3w">
-                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="ziv-Wc-73T">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="ziv-Wc-73T">
                             <connections>
                                 <segue destination="SKj-vn-Ys4" kind="unwind" identifier="BackToBlend" unwindAction="unwindToBlendViewControllerWithSender:" id="n8e-7Y-8Tr"/>
                             </connections>
@@ -168,7 +169,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Je6-fO-Pce" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="SKj-vn-Ys4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2525.5999999999999" y="176.76161919040482"/>
+            <point key="canvasLocation" x="4440.8000000000002" y="182.15892053973016"/>
         </scene>
         <!--Tutorial Page View Controller-->
         <scene sceneID="lpo-5r-jWL">
@@ -206,7 +207,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="AFD366B3-237B-46C4-AB52-E1685A618779" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="770BC464-D2F3-44F4-960A-D1DF8FBD741B" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -246,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wy-kP-1CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1709" y="826"/>
+            <point key="canvasLocation" x="2647.1999999999998" y="825.33733133433293"/>
         </scene>
         <!--Step Two View Controller-->
         <scene sceneID="vn2-Wq-zyh">
@@ -284,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4mT-cP-Qwo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2367.1999999999998" y="824.43778110944538"/>
+            <point key="canvasLocation" x="3306.4000000000001" y="824.43778110944538"/>
         </scene>
         <!--Step Three View Controller-->
         <scene sceneID="LuE-GL-EEF">
@@ -322,7 +323,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ArB-lz-oJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3039.1999999999998" y="824.43778110944538"/>
+            <point key="canvasLocation" x="4917.6000000000004" y="824.43778110944538"/>
         </scene>
         <!--Step Four View Controller-->
         <scene sceneID="aBx-2h-ffj">
@@ -360,7 +361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xw-ac-j5d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3687.1999999999998" y="825.33733133433293"/>
+            <point key="canvasLocation" x="5565.6000000000004" y="825.33733133433293"/>
         </scene>
         <!--Step Five View Controller-->
         <scene sceneID="57f-2b-t4z">
@@ -401,7 +402,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Or6-SF-aad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4396" y="824.43778110944538"/>
+            <point key="canvasLocation" x="6274.3999999999996" y="824.43778110944538"/>
         </scene>
         <!--Step Six View Controller-->
         <scene sceneID="PIh-gx-zmc">
@@ -448,29 +449,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yyU-09-ukR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5040.579710144928" y="823.36956521739137"/>
+            <point key="canvasLocation" x="6917.6000000000004" y="821.73913043478262"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="A33-VO-HLC">
+        <scene sceneID="N51-xt-GRj">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IhN-uw-6UL" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RXf-zZ-niO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BFs-IY-oS9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OZG-eY-hGV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="LYR-Im-xiC" kind="relationship" relationship="rootViewController" id="C2y-HH-7S5"/>
+                        <segue destination="LYR-Im-xiC" kind="relationship" relationship="rootViewController" id="E5h-iC-Hm6"/>
+                        <segue destination="9Yg-XQ-rg6" kind="unwind" identifier="BackToBlendFromNav" unwindAction="unwindToBlendViewControllerWithSender:" id="nbW-pQ-0NU"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V9b-vV-tqO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qPy-dA-gz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="9Yg-XQ-rg6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1584.8" y="176.76161919040482"/>
+            <point key="canvasLocation" x="3554" y="183"/>
         </scene>
     </scenes>
     <resources>
-        <image name="AFD366B3-237B-46C4-AB52-E1685A618779" width="458" height="896">
+        <image name="770BC464-D2F3-44F4-960A-D1DF8FBD741B" width="458" height="896">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

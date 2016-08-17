@@ -8,22 +8,104 @@
 
 import UIKit
 
-class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
+class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
     
     private var presenting = true
+    private var interactive = false
+    private var enterPanGesture: UIScreenEdgePanGestureRecognizer!
+    
+    var sourceViewController: UIViewController! {
+        didSet {
+            self.enterPanGesture = UIScreenEdgePanGestureRecognizer()
+            self.enterPanGesture.addTarget(self, action: #selector(handleOnstagePan))
+            self.enterPanGesture.edges = UIRectEdge.right
+            self.sourceViewController.view.addGestureRecognizer(self.enterPanGesture)
+        }
+    }
+    
+    private var exitPanGesture: UIPanGestureRecognizer!
+    
+    var destViewController: UIViewController! {
+        didSet {
+            self.exitPanGesture = UIPanGestureRecognizer()
+            self.exitPanGesture.addTarget(self, action:#selector(handleOffstagePan))
+            self.destViewController.view.addGestureRecognizer(self.exitPanGesture)
+        }
+    }
+    
+    
+    func handleOnstagePan(pan: UIScreenEdgePanGestureRecognizer){
+        let translation = pan.translation(in: pan.view!)
+        let d = translation.x / (pan.view!.bounds.width) * 0.5
+        let thresholdCrossed = d > 0.2
+        switch(pan.state) {
+        case .began:
+            self.interactive = true
+            self.sourceViewController.performSegue(withIdentifier: "ShowSavedBlends", sender: self)
+            break
+        case .changed:
+            self.update(d)
+            break
+        default:
+            self.interactive = false
+            if thresholdCrossed {
+                finish()
+            }
+            else {
+                cancel()
+            }
+        }
+    }
+    
+    func handleOffstagePan(pan: UIScreenEdgePanGestureRecognizer) {
+        let translation = pan.translation(in: pan.view!)
+        let d = translation.x / pan.view!.bounds.width * -0.5
+        let thresholdCrossed = d > 0.2
+        
+        switch (pan.state) {
+        case .began:
+            interactive = true
+            destViewController.performSegue(withIdentifier: "BackToBlendFromNav", sender: self)
+            break
+        case .changed:
+            update(d)
+            break
+        default:
+            interactive = false
+            if thresholdCrossed {
+                finish()
+            } else {
+                cancel()
+            }
+        }
+    }
+    
+    
     // MARK: UIViewControllerAnimatedTransitioning Protocol Methods
     
     // animate a change from one viewcontroller to another
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        
-        // get references
+        let (container, fromView, toView) = getViewReferences(using: transitionContext)
+        let duration = self.transitionDuration(using: transitionContext)
+        performSlideAnimation(fromView: fromView, toView: toView, container: container, with: transitionContext, duration: duration)
+    }
+    
+    func getViewReferences(using transitionContext: UIViewControllerContextTransitioning) -> (UIView, UIView, UIView) {
         let container = transitionContext.containerView
         let fromView = transitionContext.view(forKey: .from)!
         let toView = transitionContext.view(forKey: .to)!
         
-        // set up transforms for animation
-        let offScreenRight = CGAffineTransform(translationX: container.frame.width, y: 0)
-        let offScreenLeft = CGAffineTransform(translationX: -container.frame.width, y: 0)
+        return (container, fromView, toView)
+    }
+    
+    func transformsForSlideAnimation(containerView: UIView) -> (CGAffineTransform, CGAffineTransform) {
+        let offScreenRight = CGAffineTransform(translationX: containerView.frame.width, y: 0)
+        let offScreenLeft = CGAffineTransform(translationX: -containerView.frame.width, y: 0)
+        return (offScreenLeft, offScreenRight)
+    }
+    
+    func performSlideAnimation(fromView: UIView, toView: UIView, container: UIView, with transitionContext: UIViewControllerContextTransitioning, duration: TimeInterval) {
+        let (offScreenLeft, offScreenRight) = transformsForSlideAnimation(containerView: container)
         
         if self.presenting {
             toView.transform = offScreenRight
@@ -34,9 +116,6 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
         container.addSubview(toView)
         container.addSubview(fromView)
         
-        let duration = self.transitionDuration(using: transitionContext)
-        
-        // perform the animation
         UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: [], animations: {
             if self.presenting {
                 fromView.transform = offScreenLeft
@@ -45,12 +124,25 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
             }
             toView.transform = CGAffineTransform.identity
             }, completion: { finished in
-                transitionContext.completeTransition(true)
+                if transitionContext.transitionWasCancelled {
+                    transitionContext.completeTransition(false)
+                } else {
+                    transitionContext.completeTransition(true)
+                }
         })
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.5
+        return 0.4
+    }
+    
+    // MARK: UIViewControllerInteractiveTransitioning Delegate protocol methods
+    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return self.interactive ? self : nil
+    }
+    
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return self.interactive ? self : nil
     }
     
     // MARK: UIViewControllerTransitioningDelegate protocol methods

@@ -41,7 +41,8 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.transitionManager.sourceViewController = self
+        
         // Make CirclePickerViews nearly transparent
         topCircle.alpha = 0.1
         bottomCircle.alpha = 0.1
@@ -58,7 +59,19 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
+    
     // MARK: Gesture Recognizers
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer is UIScreenEdgePanGestureRecognizer {
+            return true
+        } else {
+            return false
+        }
+    }
     
     func addIndicatorPanToPickerView(_ view: ColorPickerView) {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handleIndicatorPan))
@@ -266,7 +279,6 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         let tsuccess: Bool = t.getHue(&th, saturation: &ts, brightness: &tb, alpha: &ta)
         let bsuccess: Bool = b.getHue(&bh, saturation: &bs, brightness: &bb, alpha: &ba)
         if tsuccess && bsuccess {
-            print("updateIndicatorLocation successful, and updating components")
             topCircle.indicator.center = topCircle.pointAtHueSaturation(hue: th, saturation: ts)
             bottomCircle.indicator.center = bottomCircle.pointAtHueSaturation(hue: bh, saturation: bs)
             hueBot = bh; hueTop = th; satBot = bs; satTop = ts; brightBot = bb; brightTop = tb;
@@ -382,8 +394,9 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowSavedBlends" {
-            let toViewController = segue.destination as UIViewController
+            let toViewController = segue.destination as! UINavigationController //as! SavedBlendsTableViewController
             toViewController.transitioningDelegate = self.transitionManager
+            self.transitionManager.destViewController = toViewController
         }
     }
     
