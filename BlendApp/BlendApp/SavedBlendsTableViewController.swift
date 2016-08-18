@@ -15,6 +15,7 @@ class SavedBlendsTableViewController: UITableViewController {
     var savedGrads = NSMutableArray()
     var plistPath: String!
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -28,7 +29,7 @@ class SavedBlendsTableViewController: UITableViewController {
             print("Error occurred while reading from the plist file")
         }
         self.tableView.reloadData()
-        print("#️⃣ saved grads: \(savedGrads.count)")
+        setupEmptyBackgroundView()
     }
     
     
@@ -52,7 +53,15 @@ class SavedBlendsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return savedGrads.count
+        let numRows = savedGrads.count
+        if numRows == 0 {
+            tableView.separatorStyle = .none
+            tableView.backgroundView?.isHidden = false
+        } else {
+            tableView.separatorStyle = .singleLine
+            tableView.backgroundView?.isHidden = true
+        }
+        return numRows
     }
 
    
