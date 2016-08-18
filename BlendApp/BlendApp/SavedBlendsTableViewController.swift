@@ -142,7 +142,7 @@ class SavedBlendsTableViewController: UITableViewController {
     }
     
     
-    // move to another file?
+    // move these to another file? make an extension of something?
     func getColorFromData(data: Data) -> UIColor {
         return NSKeyedUnarchiver.unarchiveObject(with: data) as! UIColor
     }

@@ -363,20 +363,10 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         let OKAction = UIAlertAction(title: "Go to Settings", style: .default) { (_) -> Void in
             let settingsURL = URL(string: "prefs:root=Wallpaper")
             if let url = settingsURL {
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                } else {
-                    // Fallback on earlier versions
-                    UIApplication.shared.openURL(url)
-                }
+                UIApplication.shared.openURL(url)
             }
             else if let url = URL(string: "prefs:root=General") {
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                } else {
-                    // Fallback on earlier versions
-                    UIApplication.shared.openURL(url)
-                }
+                UIApplication.shared.openURL(url)
             } else {
                 let oopsController = UIAlertController(title: "Oops!", message: "Sorry, you'll have to go to settings manually.", preferredStyle: .alert)
                 let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -407,9 +397,6 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func unwindToBlendViewController (sender: UIStoryboardSegue){
         if sender.source.isKind(of: SavedBlendsTableViewController.self) {
             print("✅ unwinding to blend view controller")
-        }
-        if sender.source.isKind(of: TutorialPageViewController.self) {
-            print("unwinding from tutorial")
         }
     }
     
