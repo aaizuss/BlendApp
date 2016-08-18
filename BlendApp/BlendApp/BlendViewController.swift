@@ -8,6 +8,10 @@
 
 import UIKit
 
+// Note to self: weird bug
+// on first launch, save blend, open blend from table view
+// goes to blend screen and then jumps to last page of tutorial...?
+
 class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // MARK: Properties
@@ -401,7 +405,12 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     @IBAction func unwindToBlendViewController (sender: UIStoryboardSegue){
-        print("✅ unwinding to blend view controller")
+        if sender.source.isKind(of: SavedBlendsTableViewController.self) {
+            print("✅ unwinding to blend view controller")
+        }
+        if sender.source.isKind(of: TutorialPageViewController.self) {
+            print("unwinding from tutorial")
+        }
     }
     
     // MARK: Math

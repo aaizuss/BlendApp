@@ -132,7 +132,7 @@
                     </connections>
                 </rotationGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2477.5999999999999" y="183.05847076461771"/>
+            <point key="canvasLocation" x="2134" y="246"/>
         </scene>
         <!--Blends-->
         <scene sceneID="UIt-Xq-RMq">
@@ -151,7 +151,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="SKj-vn-Ys4" kind="unwind" identifier="UnwindFromBlendCell" unwindAction="unwindToBlendViewControllerWithSender:" id="TWF-LF-hop"/>
+                                    <segue destination="SKj-vn-Ys4" kind="unwind" identifier="UnwindFromBlendCell" unwindAction="unwindToBlendViewControllerWithSender:" id="qcY-fl-ugX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -169,7 +169,7 @@
                             </barButtonItem>
                             <barButtonItem title="Help" id="9Cq-7I-hi4">
                                 <connections>
-                                    <segue destination="DhX-nQ-YsK" kind="presentation" identifier="ShowTutorial" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="P0A-ki-fSz"/>
+                                    <segue destination="DhX-nQ-YsK" kind="presentation" identifier="ShowTutorial" modalTransitionStyle="crossDissolve" id="bCH-GR-EWS"/>
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
@@ -216,7 +216,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="C264F266-08F0-4BE7-8F66-F65BAAA04D0B" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="E37554C3-30F9-48D6-B08B-238A0A07424C" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -440,7 +440,7 @@
                                     <color key="titleColor" red="0.98431372549019602" green="0.11745570408762156" blue="0.54938663848627234" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="ShowBlend" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="kdy-i9-LgE"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="ShowBlend" modalTransitionStyle="crossDissolve" id="IjE-ct-NYF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -485,7 +485,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="C264F266-08F0-4BE7-8F66-F65BAAA04D0B" width="458" height="896">
+        <image name="E37554C3-30F9-48D6-B08B-238A0A07424C" width="458" height="896">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

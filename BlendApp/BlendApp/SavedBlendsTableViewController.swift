@@ -10,8 +10,6 @@ import UIKit
 
 class SavedBlendsTableViewController: UITableViewController {
 
-    var selectedTopColor = UIColor.red
-    var selectedBotColor = UIColor.red
     var savedGrads = NSMutableArray()
     var plistPath: String!
     
@@ -29,7 +27,6 @@ class SavedBlendsTableViewController: UITableViewController {
             print("Error occurred while reading from the plist file")
         }
         self.tableView.reloadData()
-        setupEmptyBackgroundView()
     }
     
     
@@ -55,6 +52,7 @@ class SavedBlendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let numRows = savedGrads.count
         if numRows == 0 {
+            setupEmptyBackgroundView()
             tableView.separatorStyle = .none
             tableView.backgroundView?.isHidden = false
         } else {
@@ -135,11 +133,9 @@ class SavedBlendsTableViewController: UITableViewController {
         if segue.identifier == "UnwindFromBlendCell" {
             let indexPath = tableView.indexPathForSelectedRow
             let (topColor, bottomColor, rotation) = grabSavedInfoFor(indexPath!)
-            selectedTopColor = topColor
-            selectedBotColor = bottomColor
             if let blendViewController = segue.destination as? BlendViewController {
-                blendViewController.topColor = selectedTopColor
-                blendViewController.bottomColor = selectedBotColor
+                blendViewController.topColor = topColor
+                blendViewController.bottomColor = bottomColor
                 blendViewController.gradRotation = rotation
             }
         }
