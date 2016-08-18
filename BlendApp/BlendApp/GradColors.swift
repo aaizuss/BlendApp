@@ -34,6 +34,11 @@ extension UIColor {
     }
     
     struct GradPalette {
+        struct Start {
+            static let Top = UIColor(netHex: 0xB60084).cgColor
+            static let Bottom = UIColor(netHex: 0xF4D03F).cgColor
+        }
+        
         struct PinkDarkBlue {
             static let Top = UIColor(red: 242/255, green: 148/255, blue: 146/255, alpha: 1).cgColor
             static let Bottom = UIColor(red: 17/255, green: 67/255, blue: 87/255, alpha: 1).cgColor
@@ -381,7 +386,8 @@ extension UIColor {
                 (GradPalette.Horizon.Top, GradPalette.Horizon.Bottom),
                 (GradPalette.LemonTwist.Top, GradPalette.LemonTwist.Bottom),
                 (GradPalette.Sylvia.Top, GradPalette.Sylvia.Bottom),
-                (GradPalette.Pizelex.Top, GradPalette.Pizelex.Bottom)
+                (GradPalette.Pizelex.Top, GradPalette.Pizelex.Bottom),
+                (GradPalette.Start.Top, GradPalette.Start.Bottom)
             ]
         }
         

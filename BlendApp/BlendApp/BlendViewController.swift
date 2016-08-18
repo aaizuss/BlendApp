@@ -29,8 +29,10 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     var brightBot = CGFloat()
     
     var a: CGFloat = 1.0
-    var topColor = UIColor(netHex: 0xd53369)
-    var bottomColor = UIColor(netHex: 0xcbad6d)
+    //var topColor = UIColor(netHex: 0xd53369)
+    var topColor = UIColor(netHex: 0xB60084)
+    var bottomColor = UIColor(netHex: 0xF4D03F)
+    //var bottomColor = UIColor(netHex: 0xcbad6d)
     
     /* Outlets */
     @IBOutlet weak var topCircle: ColorPickerView!
