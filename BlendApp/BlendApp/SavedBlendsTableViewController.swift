@@ -126,7 +126,6 @@ class SavedBlendsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("about to perform segue")
         self.performSegue(withIdentifier: "UnwindFromBlendCell", sender: self)
     }
     
