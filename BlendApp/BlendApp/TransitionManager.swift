@@ -62,24 +62,22 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
     func handleOffstagePan(pan: UIPanGestureRecognizer) {
         let translation = pan.translation(in: pan.view!)
         let d = translation.x / pan.view!.bounds.width * 0.5
-        
-        //  only respond if the pan is moving to the right
-        if pan.velocity(in: pan.view!).x > 0 {
-            switch (pan.state) {
-            case .began:
-                interactive = true
-                destViewController.performSegue(withIdentifier: "BackToBlendFromNav", sender: self)
-                break
-            case .changed:
-                update(d)
-                break
-            default:
-                interactive = false
-                if d > 0.1 {
-                    finish()
-                } else {
-                    cancel()
-                }
+
+        switch (pan.state) {
+        case .began:
+            interactive = true
+            destViewController.performSegue(withIdentifier: "BackToBlendFromNav", sender: self)
+            break
+        case .changed:
+            update(d)
+            break
+        default:
+            self.interactive = false
+            if d > 0.1 {
+                finish()
+            }
+            else {
+                cancel()
             }
         }
     }

@@ -65,9 +65,9 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .lightContent
-//    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     // MARK: Gesture Recognizers
     
@@ -251,8 +251,6 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            print("shake begin detected")
-            
             // get random gradient
             let randomGrad = UIColor().getRandomGrad()
             let t = UIColor(cgColor: randomGrad.top)
@@ -261,13 +259,6 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
             topColor = t
             bottomColor = b
             updateIndicatorLocationFromColors(t: t, b: b)
-        }
-    }
-    
-    override func motionCancelled(_ motion: UIEventSubtype, with event: UIEvent?) {
-        if motion == .motionShake {
-            print("shake end detected")
-            
         }
     }
 
@@ -295,9 +286,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     /// - Parameter picker: the color picker view that you want to activate
     func activatePicker(_ picker: ColorPickerView) {
         if picker == topCircle {
-            
             print("activating top picker")
-            print("top circle frame: \(topCircle.frame)")
             // Change tags to indicate which circle is active
             topCircle.tag = 111
             // bottom circle tag is 101 unless it is currently active
@@ -306,11 +295,9 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
             //bottomCircle.alpha = 0.05
             bottomCircle.fade(toAlpha: 0.05, withDuration: 0.3)
             topCircle.indicator.center = picker.pointAtHueSaturation(hue: hueTop, saturation: satTop)
-            
         }
         
         if picker == bottomCircle {
-            
             print("activating bottom picker")
 
             // top circle tag is 100 unless it is currently active
@@ -323,9 +310,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
 
-    
     // MARK: - Save
-    
     
     @IBAction func didTapSave(_ sender: UIButton) {
         saveColorDataToPlist()
@@ -374,10 +359,20 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         let OKAction = UIAlertAction(title: "Go to Settings", style: .default) { (_) -> Void in
             let settingsURL = URL(string: "prefs:root=Wallpaper")
             if let url = settingsURL {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    // Fallback on earlier versions
+                    UIApplication.shared.openURL(url)
+                }
             }
             else if let url = URL(string: "prefs:root=General") {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    // Fallback on earlier versions
+                    UIApplication.shared.openURL(url)
+                }
             } else {
                 let oopsController = UIAlertController(title: "Oops!", message: "Sorry, you'll have to go to settings manually.", preferredStyle: .alert)
                 let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
@@ -406,12 +401,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     @IBAction func unwindToBlendViewController (sender: UIStoryboardSegue){
-        if sender.identifier == "BackToBlend" {
-            print("unwinding")
-        }
-        else if sender.source.isKind(of: SavedBlendsTableViewController.self) {
-            print("segue from saved grads ✅")
-        }
+        print("✅ unwinding to blend view controller")
     }
     
     // MARK: Math
