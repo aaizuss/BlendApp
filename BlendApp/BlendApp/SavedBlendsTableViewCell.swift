@@ -23,7 +23,7 @@ class SavedBlendsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
         let view = UIView()
-        view.backgroundColor = UIColor(hue: 0, saturation: 0, brightness: 1, alpha: 0.5)
+        view.backgroundColor = UIColor(hue: 0, saturation: 0, brightness: 1, alpha: 0.4)
         selectedBackgroundView = view
     }
 
