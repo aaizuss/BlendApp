@@ -15,21 +15,22 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     let transitionManager = TransitionManager()
     
     /* The Gradient */
+    var gradAnimationLayer = CAGradientLayer()
     var gradLayer = CAGradientLayer()
     var gradRotation: Float = 0
     
     /* Initial Colors (these will change with touch point) */
-    var hueTop: CGFloat = 198/360
-    var satTop: CGFloat = 19/100
-    var brightTop: CGFloat = 1.0
+    var hueTop = CGFloat()
+    var satTop = CGFloat()
+    var brightTop = CGFloat()
     
-    var hueBot: CGFloat = 251/360
-    var satBot: CGFloat = 35/100
-    var brightBot: CGFloat = 1.0
+    var hueBot = CGFloat()
+    var satBot = CGFloat()
+    var brightBot = CGFloat()
     
     var a: CGFloat = 1.0
-    var topColor = UIColor(hue: 198/360, saturation: 19/100, brightness: 1.0, alpha: 1.0)
-    var bottomColor = UIColor(hue: 251/360, saturation: 35/100, brightness: 1.0, alpha: 1.0)
+    var topColor = UIColor(netHex: 0xd53369)
+    var bottomColor = UIColor(netHex: 0xcbad6d)
     
     /* Outlets */
     @IBOutlet weak var topCircle: ColorPickerView!
@@ -41,6 +42,8 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupAnimationLayer(layer: gradAnimationLayer)
+        animateGradient(layer: gradAnimationLayer)
         self.transitionManager.sourceViewController = self
         
         // Make CirclePickerViews nearly transparent

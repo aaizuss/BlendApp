@@ -13,16 +13,20 @@ extension SavedBlendsTableViewController {
     
     func setupEmptyBackgroundView() {
         let emptyView = UIView(frame: view.bounds)
-        let topLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 20))
-        topLabel.text = "You haven't saved any Blends yet!"
-        topLabel.textAlignment = .center
-        topLabel.font = UIFont.systemFont(ofSize: 20)
-        topLabel.textColor = UIColor.darkGray
-        emptyView.addSubview(topLabel)
-        topLabel.center = view.center
+        emptyView.addSubview(label(withMessage: "You haven't saved any Blends yet!"))
         tableView.backgroundView = emptyView
         view.setNeedsLayout()
         view.layoutIfNeeded()
+    }
+    
+    func label(withMessage text: String) -> UILabel {
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 20))
+        label.text = text
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 20)
+        label.textColor = UIColor.darkGray
+        label.center = view.center
+        return label
     }
     
 }

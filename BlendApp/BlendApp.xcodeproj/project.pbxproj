@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		370496F91D63986C00C1E0B7 /* SavedBlendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370496F81D63986C00C1E0B7 /* SavedBlendsTableViewController.swift */; };
 		370496FB1D63A03C00C1E0B7 /* SavedBlendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370496FA1D63A03C00C1E0B7 /* SavedBlendsTableViewCell.swift */; };
+		375D22891D660BA700C5A0B1 /* GradientAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D22881D660BA700C5A0B1 /* GradientAnimation.swift */; };
 		3776E5E01D63BC65004D2500 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776E5DF1D63BC65004D2500 /* TransitionManager.swift */; };
 		3776E5E21D64E86C004D2500 /* UIViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776E5E11D64E86C004D2500 /* UIViewAnimations.swift */; };
 		3776E5F21D65F862004D2500 /* EmptyTableBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776E5F11D65F862004D2500 /* EmptyTableBackgroundView.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		370496F81D63986C00C1E0B7 /* SavedBlendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedBlendsTableViewController.swift; sourceTree = "<group>"; };
 		370496FA1D63A03C00C1E0B7 /* SavedBlendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedBlendsTableViewCell.swift; sourceTree = "<group>"; };
+		375D22881D660BA700C5A0B1 /* GradientAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientAnimation.swift; sourceTree = "<group>"; };
 		3776E5DF1D63BC65004D2500 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		3776E5E11D64E86C004D2500 /* UIViewAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnimations.swift; sourceTree = "<group>"; };
 		3776E5F11D65F862004D2500 /* EmptyTableBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableBackgroundView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				37B2CF311D13739000BDF254 /* BlendViewController.swift */,
 				3776E5F11D65F862004D2500 /* EmptyTableBackgroundView.swift */,
 				370496F81D63986C00C1E0B7 /* SavedBlendsTableViewController.swift */,
+				375D22881D660BA700C5A0B1 /* GradientAnimation.swift */,
 				370496FA1D63A03C00C1E0B7 /* SavedBlendsTableViewCell.swift */,
 				37BD9CAF1D148AD900F43934 /* TutorialPageViewController.swift */,
 				37BD9CB11D148B6D00F43934 /* StepViewController.swift */,
@@ -198,6 +201,7 @@
 				37B2CF321D13739000BDF254 /* BlendViewController.swift in Sources */,
 				37BD9CBA1D148BDF00F43934 /* StepThreeViewController.swift in Sources */,
 				37BD9CB01D148AD900F43934 /* TutorialPageViewController.swift in Sources */,
+				375D22891D660BA700C5A0B1 /* GradientAnimation.swift in Sources */,
 				370496F91D63986C00C1E0B7 /* SavedBlendsTableViewController.swift in Sources */,
 				37B7EB9A1D1DC88E006256D2 /* StepSixViewController.swift in Sources */,
 				37BD9CB41D148BA100F43934 /* StepZeroViewController.swift in Sources */,
