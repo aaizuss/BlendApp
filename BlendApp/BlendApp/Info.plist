@@ -2,6 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeCompose</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Random Blend</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>RandomBlend</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Generate a random Blend</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeFavorite</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>View Blends</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>OpenSavedBlends</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>View your saved Blends</string>
+		</dict>
+	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -20,6 +43,8 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>

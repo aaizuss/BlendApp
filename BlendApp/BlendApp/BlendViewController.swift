@@ -8,14 +8,9 @@
 
 import UIKit
 
-// Note to self: weird bug
-// on first launch, save blend, open blend from table view
-// goes to blend screen and then jumps to last page of tutorial...?
-
 class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // MARK: Properties
-    var colorIndicator = UIView()
     let transitionManager = TransitionManager()
     
     /* The Gradient */
@@ -23,7 +18,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     var gradLayer = CAGradientLayer()
     var gradRotation: Float = 0
     
-    /* Initial Colors (these will change with touch point) */
+    /* Color Components (change with touch point) */
     var hueTop = CGFloat()
     var satTop = CGFloat()
     var brightTop = CGFloat()
@@ -31,12 +26,10 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     var hueBot = CGFloat()
     var satBot = CGFloat()
     var brightBot = CGFloat()
-    
     var a: CGFloat = 1.0
-    //var topColor = UIColor(netHex: 0xd53369)
+
     var topColor = UIColor(netHex: 0xB60084)
     var bottomColor = UIColor(netHex: 0xF4D03F)
-    //var bottomColor = UIColor(netHex: 0xcbad6d)
     
     /* Outlets */
     @IBOutlet weak var topCircle: ColorPickerView!
@@ -75,7 +68,8 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: Gesture Recognizers
     
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer is UIScreenEdgePanGestureRecognizer {
             return true
         } else {
@@ -100,9 +94,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
             activatePicker(bottomCircle)
         }
         
-        //pickerView?.alpha = 0.7
         pickerView?.fade(toAlpha: 0.8, withDuration: 0.2)
-        colorIndicator = pickerView!.indicator
         
         // Make the Indicator draggable in the picker
         addIndicatorPanToPickerView(pickerView!)
@@ -161,12 +153,11 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func handleRotate(_ sender: UIRotationGestureRecognizer) {
         print("calling rotate")
         if topCircle.tag == 100 && bottomCircle.tag == 101 {
-            
             // Only apply the rotation when starting and continuing to rotate
-            guard sender.state == UIGestureRecognizerState.ended || sender.state == UIGestureRecognizerState.changed else {
+            guard sender.state == UIGestureRecognizerState.ended
+                || sender.state == UIGestureRecognizerState.changed else {
                 return
             }
-            
             rotateGradient(Float(sender.rotation))
         }
 
@@ -252,6 +243,16 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
     // MARK: Shake
+    
+    func getRandomGradient() {
+        let randomGrad = UIColor().getRandomGrad()
+        let t = UIColor(cgColor: randomGrad.top)
+        let b = UIColor(cgColor: randomGrad.bottom)
+        gradLayer.colors = [randomGrad.top, randomGrad.bottom]
+        topColor = t
+        bottomColor = b
+        updateIndicatorLocationFromColors(t: t, b: b)
+    }
     
     override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
@@ -358,7 +359,9 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     /// Show confirmation that image was saved successfully
     /// and give option to go to wallpaper settings
     func showSaveAlert() {
-        let alertController = UIAlertController(title: "Blend Saved!", message: "Go to settings to change your wallpaper now?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Blend Saved!",
+                                                message: "Go to settings to change your wallpaper now?",
+                                                preferredStyle: .alert)
         
         let OKAction = UIAlertAction(title: "Go to Settings", style: .default) { (_) -> Void in
             let settingsURL = URL(string: "prefs:root=Wallpaper")
@@ -387,7 +390,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // idea: embed blend vc in a nav controller, instead of embedding the table view
-        // (i think i've tried this before though)
+        // it hasn't worked when i try though :( (nav bar won't show up even if i try to force it)
         if segue.identifier == "ShowSavedBlends" {
             let toViewController = segue.destination as! UINavigationController
 //            let toViewController = segue.destination as! SavedBlendsTableViewController
@@ -399,8 +402,6 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func unwindToBlendViewController (sender: UIStoryboardSegue){
         if sender.source.isKind(of: SavedBlendsTableViewController.self) {
-            // note to self: this gets called twice when I select a cell
-            // figure out why it's being called more than once
             print("✅ unwinding to blend view controller with segue called \(sender.identifier)")
         }
     }

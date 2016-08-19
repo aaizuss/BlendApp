@@ -14,6 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var plistPathInDocDirectory: String = String()
     
+    enum ShortcutIdentifier: String {
+        case RandomBlend
+        case OpenSavedBlends
+        
+        init?(fullIdentifier: String) {
+            guard let shortIdentifier = fullIdentifier.components(separatedBy: ".").last else {
+                return nil
+            }
+            self.init(rawValue: shortIdentifier)
+        }
+    }
+    
     func preparePlistForUse() {
         let rootPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         
@@ -38,6 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         preparePlistForUse()
+        
+        var performAdditionalHandling = true
+        
         let userDefaults = UserDefaults.standard
         let launchedBefore = userDefaults.bool(forKey: "firstLaunch")
         
@@ -50,7 +65,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             showTutorial()
         }
         userDefaults.synchronize()
-        return true
+        
+        // Quick actions
+        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+            performAdditionalHandling = handleShortcut(for: shortcutItem)
+        }
+
+        return performAdditionalHandling
     }
     
     func showBlendScreen() {
@@ -67,6 +88,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tutVC = mainStoryboard.instantiateViewController(withIdentifier: "TutorialViewController") as! TutorialPageViewController
         window?.rootViewController = tutVC
         window?.makeKeyAndVisible()
+    }
+    
+    private func handleShortcut(for shortcutItem: UIApplicationShortcutItem) -> Bool {
+        let shortcutType = shortcutItem.type
+        guard let shortcutIdentifier = ShortcutIdentifier(rawValue: shortcutType) else {
+            return false
+        }
+        return performActionForIdentifier(shortcutIdentifier)
+    }
+    
+    private func performActionForIdentifier(_ identifier: ShortcutIdentifier) -> Bool {
+        guard let blendViewController = self.window?.rootViewController as? BlendViewController else {
+            return false
+        }
+        
+        switch (identifier) {
+        case .RandomBlend:
+            blendViewController.getRandomGradient()
+            return true
+        case .OpenSavedBlends:
+            blendViewController.performSegue(withIdentifier: "ShowSavedBlends", sender: blendViewController)
+            return true
+        }
+    }
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        completionHandler(handleShortcut(for: shortcutItem))
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
