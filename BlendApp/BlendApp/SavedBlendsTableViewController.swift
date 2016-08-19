@@ -8,14 +8,14 @@
 
 import UIKit
 
-class SavedBlendsTableViewController: UITableViewController {
+class SavedBlendsTableViewController: UITableViewController, UINavigationControllerDelegate {
 
     var savedGrads = NSMutableArray()
     var plistPath: String!
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         plistPath = appDelegate.plistPathInDocDirectory
         
@@ -32,9 +32,7 @@ class SavedBlendsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
+        
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
@@ -119,12 +117,7 @@ class SavedBlendsTableViewController: UITableViewController {
     
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
         return true
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "UnwindFromBlendCell", sender: self)
     }
     
     // MARK: - Navigation

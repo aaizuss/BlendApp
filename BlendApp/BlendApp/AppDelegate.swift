@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if fileDoesNotExist {
             let plistPathInBundle = Bundle.main.path(forResource: "saved-grads", ofType: "plist") as  String!
-            //print("plist path in bundle is \(plistPathInBundle)")
             
             do {
                 if let plistPathInBundle = plistPathInBundle {

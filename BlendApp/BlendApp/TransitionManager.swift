@@ -50,7 +50,7 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
             break
         default:
             self.interactive = false
-            if d > 0.2 {
+            if d > 0.1 {
                 finish()
             }
             else {
