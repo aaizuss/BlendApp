@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 
+// note: crashes when you change photos access in settings (only when also running with xcode though?)
 class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // MARK: Properties
@@ -75,6 +76,17 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
             return true
         } else {
             return false
+        }
+    }
+    
+    func addForceTouchRecognizer(to view: UIView) {
+        let forceTouchRecognizer = ForceTouchGestureRecognizer(target: self, action: #selector(handleForceTouch))
+        view.addGestureRecognizer(forceTouchRecognizer)
+    }
+    
+    func handleForceTouch(_ sender: ForceTouchGestureRecognizer) {
+        if sender.force == sender.maximumForce {
+            getRandomGradient()
         }
     }
     
