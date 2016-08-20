@@ -10,6 +10,7 @@
 		370496F91D63986C00C1E0B7 /* SavedBlendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370496F81D63986C00C1E0B7 /* SavedBlendsTableViewController.swift */; };
 		370496FB1D63A03C00C1E0B7 /* SavedBlendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370496FA1D63A03C00C1E0B7 /* SavedBlendsTableViewCell.swift */; };
 		375D22891D660BA700C5A0B1 /* GradientAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D22881D660BA700C5A0B1 /* GradientAnimation.swift */; };
+		375D228C1D68CE9200C5A0B1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375D228B1D68CE9200C5A0B1 /* Photos.framework */; };
 		3776E5E01D63BC65004D2500 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776E5DF1D63BC65004D2500 /* TransitionManager.swift */; };
 		3776E5E21D64E86C004D2500 /* UIViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776E5E11D64E86C004D2500 /* UIViewAnimations.swift */; };
 		3776E5F21D65F862004D2500 /* EmptyTableBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776E5F11D65F862004D2500 /* EmptyTableBackgroundView.swift */; };
@@ -37,6 +38,7 @@
 		370496F81D63986C00C1E0B7 /* SavedBlendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedBlendsTableViewController.swift; sourceTree = "<group>"; };
 		370496FA1D63A03C00C1E0B7 /* SavedBlendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedBlendsTableViewCell.swift; sourceTree = "<group>"; };
 		375D22881D660BA700C5A0B1 /* GradientAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientAnimation.swift; sourceTree = "<group>"; };
+		375D228B1D68CE9200C5A0B1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		3776E5DF1D63BC65004D2500 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		3776E5E11D64E86C004D2500 /* UIViewAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnimations.swift; sourceTree = "<group>"; };
 		3776E5F11D65F862004D2500 /* EmptyTableBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableBackgroundView.swift; sourceTree = "<group>"; };
@@ -67,17 +69,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				375D228C1D68CE9200C5A0B1 /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		375D228A1D68CE9200C5A0B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				375D228B1D68CE9200C5A0B1 /* Photos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		37A5F0BD1D13596000C6DAA4 = {
 			isa = PBXGroup;
 			children = (
 				37A5F0C81D13596000C6DAA4 /* BlendApp */,
 				37A5F0C71D13596000C6DAA4 /* Products */,
+				375D228A1D68CE9200C5A0B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

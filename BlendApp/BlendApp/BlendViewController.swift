@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
 
@@ -177,9 +178,6 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         gradRotation = 0.0
     }
     
-    
-    
-    
     // MARK: Gradient Layer
     
     /// Create gradient using CAGradientLayer and add as sublayer at index 0
@@ -319,7 +317,24 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func didTapSave(_ sender: UIButton) {
         saveColorDataToPlist()
-        saveToAlbum()
+        if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
+            saveToAlbum()
+        } else {
+            print("no permission")
+            // show permission
+            PHPhotoLibrary.requestAuthorization({(status:PHAuthorizationStatus) in
+                switch status {
+                case .authorized:
+                    print("authorized")
+                    self.saveToAlbum()
+                    break
+                default:
+                    print("welp")
+                    self.showSavedInAppAlert()
+                    break
+                }
+            })
+        }
     }
     
     func saveToAlbum() {
@@ -382,6 +397,20 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         alertController.addAction(noAction)
         
         alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showSavedInAppAlert() {
+        let alertController = UIAlertController(title: "Blend Saved!", message: "You can view this Blend in the app. To be able to set it as your wallpaper, allow Blend to access your photos in Settings", preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+        let settings = UIAlertAction(title: "Settings", style: .default) { _ -> Void in
+            let url = URL(string: UIApplicationOpenSettingsURLString)
+            if let url = url {
+                UIApplication.shared.openURL(url)
+            }
+        }
+        alertController.addAction(dismiss)
+        alertController.addAction(settings)
         self.present(alertController, animated: true, completion: nil)
     }
     
