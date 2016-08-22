@@ -15,6 +15,7 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
     private var presenting = true
     private var interactive = false
     private var enterPanGesture: UIScreenEdgePanGestureRecognizer!
+    private var exitPanGesture: UIPanGestureRecognizer!
     
     var sourceViewController: UIViewController! {
         didSet {
@@ -25,8 +26,6 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
         }
     }
     
-    private var exitPanGesture: UIPanGestureRecognizer!
-    
     var destViewController: UIViewController! {
         didSet {
             self.exitPanGesture = UIPanGestureRecognizer()
@@ -34,7 +33,6 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
             self.destViewController.view.addGestureRecognizer(self.exitPanGesture)
         }
     }
-    
     
     func handleOnstagePan(pan: UIScreenEdgePanGestureRecognizer){
         let translation = pan.translation(in: pan.view!)
@@ -118,7 +116,7 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
         container.addSubview(toView)
         container.addSubview(fromView)
         
-        UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: [], animations: {
+        UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
             if self.presenting {
                 fromView.transform = offScreenLeft
             } else {
