@@ -326,6 +326,47 @@ extension UIColor {
             static let Top = UIColor(netHex: 0x114357).cgColor
             static let Bottom = UIColor(netHex: 0xF29492).cgColor
         }
+        
+        struct BasicBlue {
+            static let Top = UIColor(netHex: 0x133aab).cgColor
+            static let Bottom = UIColor(netHex: 0x13266d).cgColor
+        }
+        
+        struct HotPink {
+            static let Top = UIColor(netHex: 0xfe1e77).cgColor
+            static let Bottom = UIColor(netHex: 0xC4175C).cgColor
+        }
+        
+        struct GoldPurple {
+            static let Top = UIColor(netHex: 0x845925).cgColor
+            static let Bottom = UIColor(netHex: 0x843f9a).cgColor
+        }
+        
+        struct PeachOrange {
+            static let Top = UIColor(netHex: 0xd65966).cgColor
+            static let Bottom = UIColor(netHex: 0xd6470c).cgColor
+        }
+        
+        struct Silvery {
+            static let Top = UIColor(netHex: 0xb6a7ec).cgColor
+            static let Bottom = UIColor(netHex: 0xb69768).cgColor
+        }
+        
+        struct MintDesaturated {
+            static let Top = UIColor(netHex: 0xb3ed86).cgColor
+            static let Bottom = UIColor(netHex: 0xb3cdac).cgColor
+        }
+        
+        struct DarkGoldPurple {
+            static let Top = UIColor(netHex: 0x815d29).cgColor
+            static let Bottom = UIColor(netHex: 0x8154ac).cgColor
+        }
+        
+        struct GreyBlue {
+            static let Top = UIColor(netHex: 0x5d868f).cgColor
+            static let Bottom = UIColor(netHex: 0x5d64f5).cgColor
+        }
+
     }
     
     /// Randomly select a gradient tuple (top color, bottom color) from the above colors
@@ -387,7 +428,15 @@ extension UIColor {
                 (GradPalette.LemonTwist.Top, GradPalette.LemonTwist.Bottom),
                 (GradPalette.Sylvia.Top, GradPalette.Sylvia.Bottom),
                 (GradPalette.Pizelex.Top, GradPalette.Pizelex.Bottom),
-                (GradPalette.Start.Top, GradPalette.Start.Bottom)
+                (GradPalette.Start.Top, GradPalette.Start.Bottom),
+                (GradPalette.HotPink.Top, GradPalette.HotPink.Bottom),
+                (GradPalette.BasicBlue.Top, GradPalette.BasicBlue.Bottom),
+                (GradPalette.GoldPurple.Top, GradPalette.GoldPurple.Bottom),
+                (GradPalette.PeachOrange.Top, GradPalette.PeachOrange.Bottom),
+                (GradPalette.Silvery.Top, GradPalette.Silvery.Bottom),
+                (GradPalette.MintDesaturated.Top, GradPalette.MintDesaturated.Bottom),
+                (GradPalette.DarkGoldPurple.Top, GradPalette.DarkGoldPurple.Bottom),
+                (GradPalette.GreyBlue.Top, GradPalette.GreyBlue.Bottom)
             ]
         }
         
