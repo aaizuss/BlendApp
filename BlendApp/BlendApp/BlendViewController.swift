@@ -50,6 +50,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         // Make CirclePickerViews nearly transparent
         topCircle.alpha = 0.1
         bottomCircle.alpha = 0.1
+        addForceTouchRecognizer(to: view)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,7 +73,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
                            shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        if gestureRecognizer is UIScreenEdgePanGestureRecognizer {
+        if gestureRecognizer is UIScreenEdgePanGestureRecognizer || gestureRecognizer is ForceTouchGestureRecognizer {
             return true
         } else {
             return false
@@ -80,13 +81,26 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func addForceTouchRecognizer(to view: UIView) {
-        let forceTouchRecognizer = ForceTouchGestureRecognizer(target: self, action: #selector(handleForceTouch))
-        view.addGestureRecognizer(forceTouchRecognizer)
+        if traitCollection.forceTouchCapability == .available {
+            let forceTouchRecognizer = ForceTouchGestureRecognizer(target: self, action: #selector(handleForceTouch))
+            view.addGestureRecognizer(forceTouchRecognizer)
+            print("added force touch recognizer")
+        } else {
+            print("force touch not available. not doing anything")
+        }
+    }
+    
+    func removeForceTouchRecognizer(_ recognizer: ForceTouchGestureRecognizer, from view: UIView) {
+        view.removeGestureRecognizer(recognizer)
+        print("removed force touch recognizer")
     }
     
     func handleForceTouch(_ sender: ForceTouchGestureRecognizer) {
-        if sender.force == sender.maximumForce {
+        if sender.state == .began {
+            print("begin")
             getRandomGradient()
+        } else if sender.state == .ended {
+            print("ends")
         }
     }
     
@@ -98,7 +112,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func didTapColorPicker(_ sender: UITapGestureRecognizer) {
         let pickerView = sender.view as? ColorPickerView
-        
+
         if pickerView == topCircle {
             activatePicker(topCircle)
         }
