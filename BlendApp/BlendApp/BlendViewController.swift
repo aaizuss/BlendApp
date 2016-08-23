@@ -81,9 +81,13 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func addForceTouchRecognizer(to view: UIView) {
-        let forceTouchRecognizer = ForceTouchGestureRecognizer(target: self, action: #selector(handleForceTouch))
-        view.addGestureRecognizer(forceTouchRecognizer)
-        print("added force touch recognizer")
+        if traitCollection.forceTouchCapability == .available {
+            let forceTouchRecognizer = ForceTouchGestureRecognizer(target: self, action: #selector(handleForceTouch))
+            view.addGestureRecognizer(forceTouchRecognizer)
+            print("added force touch recognizer")
+        } else {
+            print("force touch not available. not doing anything")
+        }
     }
     
     func removeForceTouchRecognizer(_ recognizer: ForceTouchGestureRecognizer, from view: UIView) {

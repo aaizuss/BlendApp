@@ -3,18 +3,20 @@
 //  BlendApp
 //
 //  Created by Amanda Aizuss on 8/20/16.
+//  Adapted from FlexMonkey DeepPressGestureRecognizer
 //  Copyright © 2016 aaizuss. All rights reserved.
 //
 
 import UIKit.UIGestureRecognizerSubclass
+import AudioToolbox
 
+@available(iOS 9.0, *)
 public class ForceTouchGestureRecognizer: UIGestureRecognizer {
     private var _force: CGFloat = 0.0
     
     public var force: CGFloat { get { return _force } }
     public var threshold: CGFloat = 1.0
     public var forceTouched: Bool = false
-    public var maximumForce: CGFloat = 4.0
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
         normalizeForceAndFireEvent(state: .began, touches: touches)
@@ -42,12 +44,11 @@ public class ForceTouchGestureRecognizer: UIGestureRecognizer {
             forceTouched = false
         } else if !forceTouched && normalizedTouch >= threshold {
             self.state = .began
+            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
             forceTouched = true
         }
         
-        maximumForce = min(firstTouch.maximumPossibleForce, maximumForce)
-        _force = firstTouch.force / maximumForce
-
+        _force = normalizedTouch
     }
     
     public override func reset() {
