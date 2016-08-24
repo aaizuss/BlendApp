@@ -16,6 +16,7 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
     private var interactive = false
     private var enterPanGesture: UIScreenEdgePanGestureRecognizer!
     private var exitPanGesture: UIPanGestureRecognizer!
+    private var editingMode = false
     
     var sourceViewController: UIViewController! {
         didSet {
@@ -116,7 +117,7 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
         container.addSubview(toView)
         container.addSubview(fromView)
         
-        UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
             if self.presenting {
                 fromView.transform = offScreenLeft
             } else {
