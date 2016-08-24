@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N9C-9u-uuD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -7,6 +7,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="q9d-Yb-VF6">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationController" navigationBarHidden="YES" id="N9C-9u-uuD" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tw0-mS-kW5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="C5X-um-tAd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cik-Rr-3Ii" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3932" y="278"/>
+        </scene>
         <!--Blend View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -19,21 +35,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0e5-YG-e5z" customClass="ColorPickerView" customModule="BlendApp" customModuleProvider="target">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="bnR-Y9-uiM">
-                                        <variation key="widthClass=regular" constant="350"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="240" id="pXB-Zx-K6i">
-                                        <variation key="widthClass=regular" constant="350"/>
-                                    </constraint>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="ESC-jE-cKk" appends="YES" id="lQX-L7-s7q"/>
-                                </connections>
-                            </view>
                             <view tag="101" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mdd-eQ-UA2" customClass="ColorPickerView" customModule="BlendApp" customModuleProvider="target">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
@@ -64,9 +65,24 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pI3-f0-F9Z" kind="show" identifier="ShowSavedBlends" id="ZbQ-ef-wLX"/>
+                                    <segue destination="LYR-Im-xiC" kind="show" identifier="ShowSavedBlends" id="Qqm-Sh-T6e"/>
                                 </connections>
                             </button>
+                            <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0e5-YG-e5z" customClass="ColorPickerView" customModule="BlendApp" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="bnR-Y9-uiM">
+                                        <variation key="widthClass=regular" constant="350"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="240" id="pXB-Zx-K6i">
+                                        <variation key="widthClass=regular" constant="350"/>
+                                    </constraint>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ESC-jE-cKk" appends="YES" id="lQX-L7-s7q"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -131,7 +147,7 @@
                     </connections>
                 </rotationGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3772" y="278"/>
+            <point key="canvasLocation" x="4711.1999999999998" y="277.51124437781112"/>
         </scene>
         <!--Blends-->
         <scene sceneID="UIt-Xq-RMq">
@@ -143,10 +159,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="gradientCell" id="lN7-1W-ZY3" customClass="SavedBlendsTableViewCell" customModule="BlendApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="115"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="115"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lN7-1W-ZY3" id="dGZ-b4-gNf">
-                                    <frame key="frameInset" width="375" height="114"/>
+                                    <frame key="frameInset" width="375" height="115"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -159,18 +175,12 @@
                             <outlet property="delegate" destination="LYR-Im-xiC" id="W6Q-ek-Iwf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Blends" id="W1h-jS-s3w">
-                        <barButtonItem key="leftBarButtonItem" image="back" id="Xj5-au-XfR">
-                            <connections>
-                                <segue destination="SKj-vn-Ys4" kind="unwind" identifier="BackToBlend" unwindAction="unwindToBlendViewControllerWithSender:" id="qt3-YJ-pUl"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Blends" id="W1h-jS-s3w"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Je6-fO-Pce" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="SKj-vn-Ys4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5444" y="215"/>
+            <point key="canvasLocation" x="5464.8000000000002" y="277.51124437781112"/>
         </scene>
         <!--Tutorial Page View Controller-->
         <scene sceneID="lpo-5r-jWL">
@@ -208,7 +218,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="1ACDA18A-2717-495E-9785-0E238A33A589" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="C6A5FEDB-71C0-4533-84FE-DAE3314EE824" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -432,7 +442,7 @@
                                     <color key="titleColor" red="0.98431372549019602" green="0.11745570408762156" blue="0.54938663848627234" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="ShowBlend" modalTransitionStyle="crossDissolve" id="urU-nJ-AyO"/>
+                                    <segue destination="N9C-9u-uuD" kind="presentation" modalTransitionStyle="crossDissolve" id="hZ7-Vf-uOK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -455,29 +465,9 @@
             </objects>
             <point key="canvasLocation" x="4260" y="-649"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ehb-Sy-Ksn">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pI3-f0-F9Z" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z5l-vT-4HK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="LYR-Im-xiC" kind="relationship" relationship="rootViewController" id="e73-Re-aT3"/>
-                        <segue destination="sb5-Qz-PGQ" kind="unwind" identifier="BackToBlendFromNav" unwindAction="unwindToBlendViewControllerWithSender:" id="Voh-8e-V8T"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fux-Xx-sAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="sb5-Qz-PGQ" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="4554" y="382"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="1ACDA18A-2717-495E-9785-0E238A33A589" width="458" height="896">
+        <image name="C6A5FEDB-71C0-4533-84FE-DAE3314EE824" width="458" height="896">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -27890,7 +27880,6 @@ ABkWZgAZFnMAGRZ4ABkWegAZFnwAGRaBABkWiQAZFowAGRaRABkWmQAZFpwAGRauABkWsQAZFrYAAAAA
 AAAEAQAAAAAAAABBAAAAAAAAAAAAAAAAABkWuA
 </mutableData>
         </image>
-        <image name="back" width="25" height="25"/>
         <image name="brightness" width="890" height="893"/>
         <image name="howto" width="890" height="893"/>
         <image name="r1" width="458" height="896"/>

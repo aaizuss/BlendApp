@@ -27,11 +27,11 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
         }
     }
     
-    var destViewController: UIViewController! {
+    var destViewController: SavedBlendsTableViewController! {
         didSet {
-            self.exitPanGesture = UIPanGestureRecognizer()
-            self.exitPanGesture.addTarget(self, action:#selector(handleOffstagePan))
-            self.destViewController.view.addGestureRecognizer(self.exitPanGesture)
+            //self.exitPanGesture = UIPanGestureRecognizer()
+            //self.exitPanGesture.addTarget(self, action:#selector(handleOffstagePan))
+            //self.destViewController.view.addGestureRecognizer(self.exitPanGesture)
         }
     }
     
@@ -65,7 +65,7 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
         switch (pan.state) {
         case .began:
             interactive = true
-            destViewController.performSegue(withIdentifier: "BackToBlendFromNav", sender: self)
+            destViewController.performSegue(withIdentifier: "BackToBlend", sender: self)
             break
         case .changed:
             update(d)

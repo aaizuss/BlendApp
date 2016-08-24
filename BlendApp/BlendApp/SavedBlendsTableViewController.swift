@@ -15,7 +15,7 @@ class SavedBlendsTableViewController: UITableViewController, UINavigationControl
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+        print(navigationController)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         plistPath = appDelegate.plistPathInDocDirectory
         
