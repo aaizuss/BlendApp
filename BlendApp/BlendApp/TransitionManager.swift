@@ -8,7 +8,7 @@
 
 import UIKit
 
-// idea: 3d touch on blend view controller to show saved gradients...
+// idea: don't respond to transitions when in edit mode?
 
 class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
     
@@ -44,7 +44,7 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
             self.sourceViewController.performSegue(withIdentifier: "ShowSavedBlends", sender: self)
             break
         case .changed:
-            self.update(d)
+            update(d)
             break
         default:
             self.interactive = false
@@ -142,7 +142,8 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
         return self.interactive ? self : nil
     }
     
-    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning)
+        -> UIViewControllerInteractiveTransitioning? {
         return self.interactive ? self : nil
     }
     

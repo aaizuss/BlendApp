@@ -106,6 +106,7 @@ class SavedBlendsTableViewController: UITableViewController, UINavigationControl
     }
     
     // Override to support rearranging the table view.
+    // issue: tries to do transition when editing, so editing doesn't work
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         let itemToMove = savedGrads[fromIndexPath.row]
         savedGrads.removeObject(at: fromIndexPath.row)
