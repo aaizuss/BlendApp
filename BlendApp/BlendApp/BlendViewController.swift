@@ -13,7 +13,7 @@ import Photos
 class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // MARK: Properties
-    let transitionManager = TransitionManager()
+    //let transitionManager = TransitionManager()
     
     /* The Gradient */
     var gradAnimationLayer = CAGradientLayer()
@@ -45,7 +45,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         setupAnimationLayer(layer: gradAnimationLayer)
         animateGradient(layer: gradAnimationLayer)
-        self.transitionManager.sourceViewController = self
+        //self.transitionManager.sourceViewController = self
         
         // Make CirclePickerViews nearly transparent
         topCircle.alpha = 0.1
@@ -449,8 +449,8 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         if segue.identifier == "ShowSavedBlends" {
             let toViewController = segue.destination as! UINavigationController
 //            let toViewController = segue.destination as! SavedBlendsTableViewController
-            toViewController.transitioningDelegate = self.transitionManager
-            self.transitionManager.destViewController = toViewController
+            //toViewController.transitioningDelegate = self.transitionManager
+            //self.transitionManager.destViewController = toViewController
         }
     }
     
