@@ -64,7 +64,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="pI3-f0-F9Z" kind="presentation" identifier="ShowSavedBlends" modalTransitionStyle="flipHorizontal" id="ZbQ-ef-wLX"/>
+                                    <segue destination="pI3-f0-F9Z" kind="presentation" identifier="ShowSavedBlends" modalTransitionStyle="coverVertical" id="ZbQ-ef-wLX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -160,7 +160,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Blends" id="W1h-jS-s3w">
-                        <barButtonItem key="leftBarButtonItem" image="back" id="Xj5-au-XfR">
+                        <barButtonItem key="leftBarButtonItem" image="close" id="Xj5-au-XfR">
                             <connections>
                                 <segue destination="SKj-vn-Ys4" kind="unwind" identifier="BackToBlend" unwindAction="unwindToBlendViewControllerWithSender:" id="qt3-YJ-pUl"/>
                             </connections>
@@ -208,7 +208,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="57916EBB-2014-47AC-94C4-D8652A4CD09C" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="A0A13790-15C9-44A6-9B12-1C3750855896" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -477,7 +477,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="57916EBB-2014-47AC-94C4-D8652A4CD09C" width="458" height="896">
+        <image name="A0A13790-15C9-44A6-9B12-1C3750855896" width="458" height="896">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -27890,8 +27890,8 @@ ABkWZgAZFnMAGRZ4ABkWegAZFnwAGRaBABkWiQAZFowAGRaRABkWmQAZFpwAGRauABkWsQAZFrYAAAAA
 AAAEAQAAAAAAAABBAAAAAAAAAAAAAAAAABkWuA
 </mutableData>
         </image>
-        <image name="back" width="25" height="25"/>
         <image name="brightness" width="890" height="893"/>
+        <image name="close" width="25" height="25"/>
         <image name="howto" width="890" height="893"/>
         <image name="r1" width="458" height="896"/>
         <image name="rotation" width="458" height="896"/>
