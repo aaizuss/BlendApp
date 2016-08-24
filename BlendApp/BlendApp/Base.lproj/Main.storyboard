@@ -208,7 +208,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="A0A13790-15C9-44A6-9B12-1C3750855896" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="B2E53BF4-664E-4170-BF5E-6062DCE9247E" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -458,6 +458,8 @@
         <!--Navigation Controller-->
         <scene sceneID="ehb-Sy-Ksn">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fux-Xx-sAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sb5-Qz-PGQ" userLabel="Exit" sceneMemberID="exit"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pI3-f0-F9Z" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="z5l-vT-4HK">
@@ -470,14 +472,12 @@
                         <segue destination="sb5-Qz-PGQ" kind="unwind" identifier="BackToBlendFromNav" unwindAction="unwindToBlendViewControllerWithSender:" id="Voh-8e-V8T"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fux-Xx-sAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="sb5-Qz-PGQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4554" y="382"/>
+            <point key="canvasLocation" x="4615" y="299"/>
         </scene>
     </scenes>
     <resources>
-        <image name="A0A13790-15C9-44A6-9B12-1C3750855896" width="458" height="896">
+        <image name="B2E53BF4-664E-4170-BF5E-6062DCE9247E" width="458" height="896">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

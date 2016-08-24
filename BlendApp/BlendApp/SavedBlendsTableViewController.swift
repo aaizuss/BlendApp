@@ -10,6 +10,7 @@ import UIKit
 
 class SavedBlendsTableViewController: UITableViewController, UINavigationControllerDelegate {
 
+    var interactor:TransitionInteractor? = nil
     var savedGrads = NSMutableArray()
     var plistPath: String!
     

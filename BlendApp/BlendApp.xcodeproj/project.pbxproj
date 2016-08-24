@@ -15,6 +15,8 @@
 		3776E5E01D63BC65004D2500 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776E5DF1D63BC65004D2500 /* TransitionManager.swift */; };
 		3776E5E21D64E86C004D2500 /* UIViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776E5E11D64E86C004D2500 /* UIViewAnimations.swift */; };
 		3776E5F21D65F862004D2500 /* EmptyTableBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776E5F11D65F862004D2500 /* EmptyTableBackgroundView.swift */; };
+		3785B33F1D6E124000224FF1 /* DismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3785B33E1D6E124000224FF1 /* DismissAnimator.swift */; };
+		3785B3411D6E156D00224FF1 /* TransitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3785B3401D6E156D00224FF1 /* TransitionInteractor.swift */; };
 		379C28B81D638E4E00822756 /* saved-grads.plist in Resources */ = {isa = PBXBuildFile; fileRef = 379C28B71D638E4E00822756 /* saved-grads.plist */; };
 		37A5F0CA1D13596000C6DAA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5F0C91D13596000C6DAA4 /* AppDelegate.swift */; };
 		37A5F0CF1D13596000C6DAA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37A5F0CD1D13596000C6DAA4 /* Main.storyboard */; };
@@ -44,6 +46,8 @@
 		3776E5DF1D63BC65004D2500 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		3776E5E11D64E86C004D2500 /* UIViewAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnimations.swift; sourceTree = "<group>"; };
 		3776E5F11D65F862004D2500 /* EmptyTableBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableBackgroundView.swift; sourceTree = "<group>"; };
+		3785B33E1D6E124000224FF1 /* DismissAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissAnimator.swift; sourceTree = "<group>"; };
+		3785B3401D6E156D00224FF1 /* TransitionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionInteractor.swift; sourceTree = "<group>"; };
 		379C28B71D638E4E00822756 /* saved-grads.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "saved-grads.plist"; sourceTree = "<group>"; };
 		37A5F0C61D13596000C6DAA4 /* BlendApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlendApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A5F0C91D13596000C6DAA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				3776E5E11D64E86C004D2500 /* UIViewAnimations.swift */,
 				37BD9CAD1D1449FC00F43934 /* GradColors.swift */,
 				37B2CF311D13739000BDF254 /* BlendViewController.swift */,
+				3785B33E1D6E124000224FF1 /* DismissAnimator.swift */,
+				3785B3401D6E156D00224FF1 /* TransitionInteractor.swift */,
 				3776E5F11D65F862004D2500 /* EmptyTableBackgroundView.swift */,
 				370496F81D63986C00C1E0B7 /* SavedBlendsTableViewController.swift */,
 				370496FA1D63A03C00C1E0B7 /* SavedBlendsTableViewCell.swift */,
@@ -226,6 +232,7 @@
 				3776E5E01D63BC65004D2500 /* TransitionManager.swift in Sources */,
 				37BD9CBC1D148BEA00F43934 /* StepFourViewController.swift in Sources */,
 				37BD9CB81D148BD200F43934 /* StepTwoViewController.swift in Sources */,
+				3785B33F1D6E124000224FF1 /* DismissAnimator.swift in Sources */,
 				3776E5F21D65F862004D2500 /* EmptyTableBackgroundView.swift in Sources */,
 				37BD9CBE1D148BF100F43934 /* StepFiveViewController.swift in Sources */,
 				3776E5E21D64E86C004D2500 /* UIViewAnimations.swift in Sources */,
@@ -233,6 +240,7 @@
 				370496FB1D63A03C00C1E0B7 /* SavedBlendsTableViewCell.swift in Sources */,
 				37B2CF341D13749800BDF254 /* ColorPickerView.swift in Sources */,
 				37BD9CAE1D1449FC00F43934 /* GradColors.swift in Sources */,
+				3785B3411D6E156D00224FF1 /* TransitionInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

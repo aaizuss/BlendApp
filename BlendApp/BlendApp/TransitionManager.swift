@@ -87,8 +87,20 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let (container, fromView, toView) = getViewReferences(using: transitionContext)
         let duration = self.transitionDuration(using: transitionContext)
-        performSlideAnimation(fromView: fromView, toView: toView, container: container, with: transitionContext, duration: duration)
+        //performSlideAnimation(fromView: fromView, toView: toView, container: container, with: transitionContext, duration: duration)
+        container.insertSubview(toView, belowSubview: fromView)
+        let screenBounds = UIScreen.main.bounds
+        let bottomLeftCorner = CGPoint(x: 0, y: screenBounds.height)
+        let finalFrame = CGRect(origin: bottomLeftCorner, size: screenBounds.size)
+        
+        // moves from view down by one screen length
+        UIView.animate(withDuration: duration, animations: {
+            fromView.frame = finalFrame
+            }, completion: {_ in
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+        })
     }
+    
     
     func getViewReferences(using transitionContext: UIViewControllerContextTransitioning) -> (UIView, UIView, UIView) {
         let container = transitionContext.containerView
