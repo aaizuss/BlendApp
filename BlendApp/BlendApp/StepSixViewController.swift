@@ -20,6 +20,19 @@ class StepSixViewController: StepViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func tapStartBlend(_ sender: UIButton) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let blendVC = mainStoryboard.instantiateInitialViewController() as! BlendViewController
+        self.view.window?.rootViewController = blendVC
+    }
+    
+    func simpleTransition(to view: UIView, rootViewController: UIViewController) {
+        UIView.transition(from: self.view, to: view, duration: 0.5, options: .transitionCrossDissolve) { (completed) -> Void in
+            if (completed) {
+                self.view.window?.rootViewController = rootViewController
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

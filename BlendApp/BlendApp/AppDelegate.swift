@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func showTutorial() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
         let tutVC = mainStoryboard.instantiateViewController(withIdentifier: "TutorialViewController") as! TutorialPageViewController
         window?.rootViewController = tutVC
         window?.makeKeyAndVisible()
