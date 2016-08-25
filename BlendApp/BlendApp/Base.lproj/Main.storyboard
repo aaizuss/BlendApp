@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N9C-9u-uuD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -7,26 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="q9d-Yb-VF6">
-            <objects>
-                <navigationController storyboardIdentifier="NavigationController" id="N9C-9u-uuD" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tw0-mS-kW5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="C5X-um-tAd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cik-Rr-3Ii" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3932" y="278"/>
-        </scene>
-        <!--Blend View Controller-->
+        <!--BlendViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="BlendViewController" id="BYZ-38-t0r" customClass="BlendViewController" customModule="BlendApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BlendViewController" title="BlendViewController" id="BYZ-38-t0r" customClass="BlendViewController" customModule="BlendApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -65,7 +49,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LYR-Im-xiC" kind="show" identifier="ShowSavedBlends" id="Qqm-Sh-T6e"/>
+                                    <segue destination="MBV-1R-aXI" kind="presentation" identifier="ShowSavedBlends" modalTransitionStyle="flipHorizontal" id="Vu2-Fc-klU"/>
                                 </connections>
                             </button>
                             <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0e5-YG-e5z" customClass="ColorPickerView" customModule="BlendApp" customModuleProvider="target">
@@ -147,7 +131,7 @@
                     </connections>
                 </rotationGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4711.1999999999998" y="277.51124437781112"/>
+            <point key="canvasLocation" x="4287" y="257"/>
         </scene>
         <!--Blends-->
         <scene sceneID="UIt-Xq-RMq">
@@ -175,12 +159,18 @@
                             <outlet property="delegate" destination="LYR-Im-xiC" id="W6Q-ek-Iwf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Blends" id="W1h-jS-s3w"/>
+                    <navigationItem key="navigationItem" title="Blends" id="W1h-jS-s3w">
+                        <barButtonItem key="leftBarButtonItem" image="close" id="H6z-CK-ZHF">
+                            <connections>
+                                <segue destination="SKj-vn-Ys4" kind="unwind" identifier="BackToBlend" unwindAction="unwindToBlendViewControllerWithSender:" id="7Qr-nX-heD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Je6-fO-Pce" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="SKj-vn-Ys4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5464.8000000000002" y="277.51124437781112"/>
+            <point key="canvasLocation" x="6100" y="256.82158920539734"/>
         </scene>
         <!--Tutorial Page View Controller-->
         <scene sceneID="lpo-5r-jWL">
@@ -218,7 +208,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="106BAE86-D943-466F-AA63-04E606003CF1" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="68E6D7F5-9B7A-4CA7-817B-B1CE50CB4870" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -441,9 +431,6 @@
                                 <state key="normal" title="Start Blend!">
                                     <color key="titleColor" red="0.98431372549019602" green="0.11745570408762156" blue="0.54938663848627234" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="N9C-9u-uuD" kind="presentation" modalTransitionStyle="crossDissolve" id="hZ7-Vf-uOK"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -465,9 +452,27 @@
             </objects>
             <point key="canvasLocation" x="4260" y="-649"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="r8F-YC-Sph">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MBV-1R-aXI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hac-3g-kej">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LYR-Im-xiC" kind="relationship" relationship="rootViewController" id="6hP-Ki-keM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5pf-uy-HC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5160.8000000000002" y="256.82158920539734"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="106BAE86-D943-466F-AA63-04E606003CF1" width="458" height="896">
+        <image name="68E6D7F5-9B7A-4CA7-817B-B1CE50CB4870" width="458" height="896">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -27881,6 +27886,7 @@ AAAEAQAAAAAAAABBAAAAAAAAAAAAAAAAABkWuA
 </mutableData>
         </image>
         <image name="brightness" width="890" height="893"/>
+        <image name="close" width="25" height="25"/>
         <image name="howto" width="890" height="893"/>
         <image name="r1" width="458" height="896"/>
         <image name="rotation" width="458" height="896"/>

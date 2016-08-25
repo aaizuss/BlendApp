@@ -12,7 +12,6 @@
 		375D22891D660BA700C5A0B1 /* GradientAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D22881D660BA700C5A0B1 /* GradientAnimation.swift */; };
 		375D228C1D68CE9200C5A0B1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375D228B1D68CE9200C5A0B1 /* Photos.framework */; };
 		375D228E1D68E85D00C5A0B1 /* ForceTouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D228D1D68E85D00C5A0B1 /* ForceTouchGestureRecognizer.swift */; };
-		3776E5E01D63BC65004D2500 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776E5DF1D63BC65004D2500 /* TransitionManager.swift */; };
 		3776E5E21D64E86C004D2500 /* UIViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776E5E11D64E86C004D2500 /* UIViewAnimations.swift */; };
 		3776E5F21D65F862004D2500 /* EmptyTableBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3776E5F11D65F862004D2500 /* EmptyTableBackgroundView.swift */; };
 		379C28B81D638E4E00822756 /* saved-grads.plist in Resources */ = {isa = PBXBuildFile; fileRef = 379C28B71D638E4E00822756 /* saved-grads.plist */; };
@@ -41,7 +40,6 @@
 		375D22881D660BA700C5A0B1 /* GradientAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientAnimation.swift; sourceTree = "<group>"; };
 		375D228B1D68CE9200C5A0B1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		375D228D1D68E85D00C5A0B1 /* ForceTouchGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouchGestureRecognizer.swift; sourceTree = "<group>"; };
-		3776E5DF1D63BC65004D2500 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		3776E5E11D64E86C004D2500 /* UIViewAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnimations.swift; sourceTree = "<group>"; };
 		3776E5F11D65F862004D2500 /* EmptyTableBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyTableBackgroundView.swift; sourceTree = "<group>"; };
 		379C28B71D638E4E00822756 /* saved-grads.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "saved-grads.plist"; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				37A5F0C91D13596000C6DAA4 /* AppDelegate.swift */,
-				3776E5DF1D63BC65004D2500 /* TransitionManager.swift */,
 				37B2CF331D13749800BDF254 /* ColorPickerView.swift */,
 				3776E5E11D64E86C004D2500 /* UIViewAnimations.swift */,
 				37BD9CAD1D1449FC00F43934 /* GradColors.swift */,
@@ -223,7 +220,6 @@
 				37BD9CB41D148BA100F43934 /* StepZeroViewController.swift in Sources */,
 				37BD9CB61D148BC300F43934 /* StepOneViewController.swift in Sources */,
 				37BD9CB21D148B6D00F43934 /* StepViewController.swift in Sources */,
-				3776E5E01D63BC65004D2500 /* TransitionManager.swift in Sources */,
 				37BD9CBC1D148BEA00F43934 /* StepFourViewController.swift in Sources */,
 				37BD9CB81D148BD200F43934 /* StepTwoViewController.swift in Sources */,
 				3776E5F21D65F862004D2500 /* EmptyTableBackgroundView.swift in Sources */,
