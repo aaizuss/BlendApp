@@ -146,7 +146,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="115"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lN7-1W-ZY3" id="dGZ-b4-gNf">
-                                    <frame key="frameInset" width="375" height="114"/>
+                                    <frame key="frameInset" width="375" height="115"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -159,6 +159,13 @@
                             <outlet property="delegate" destination="LYR-Im-xiC" id="W6Q-ek-Iwf"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Help" id="5Kc-Nf-YKv">
+                            <connections>
+                                <action selector="showTutorial:" destination="LYR-Im-xiC" id="4Nm-i5-Z3H"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Blends" id="W1h-jS-s3w">
                         <barButtonItem key="leftBarButtonItem" image="close" id="H6z-CK-ZHF">
                             <connections>
@@ -175,13 +182,17 @@
         <!--Navigation Controller-->
         <scene sceneID="r8F-YC-Sph">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MBV-1R-aXI" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="MBV-1R-aXI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hac-3g-kej">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="irz-zx-mFh">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="LYR-Im-xiC" kind="relationship" relationship="rootViewController" id="6hP-Ki-keM"/>
                     </connections>

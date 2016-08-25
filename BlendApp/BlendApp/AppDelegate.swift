@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             showBlendScreen()
         } else {
             print("AppDelegate says 💫First Launch!")
-            userDefaults.set(true, forKey: "firstLaunch")
+            //userDefaults.set(true, forKey: "firstLaunch")
             showTutorial()
         }
         userDefaults.synchronize()

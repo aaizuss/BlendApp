@@ -40,6 +40,21 @@ class SavedBlendsTableViewController: UITableViewController, UINavigationControl
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBAction func showTutorial(_ sender: UIBarButtonItem) {
+        let tutorialStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let tutVC = tutorialStoryboard.instantiateInitialViewController() as! TutorialPageViewController
+        let launchedBefore = UserDefaults.standard.bool(forKey: "firstLaunch")
+        if launchedBefore {
+            print("it's not the first launch so we present the tut vc")
+            present(tutVC, animated: true, completion: nil)
+        } else {
+            print("it's the first launch, so we dismiss this vc")
+            dismiss(animated: true, completion: nil)
+        }
+
+    }
 
     // MARK: - Table view data source
 
