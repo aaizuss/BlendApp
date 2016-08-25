@@ -77,8 +77,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func showBlendScreen() {
         window = UIWindow(frame: UIScreen.main.bounds)
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let blendVC = mainStoryboard.instantiateViewController(withIdentifier: "BlendViewController") as! BlendViewController
-        window?.rootViewController = blendVC
+        //let blendVC = mainStoryboard.instantiateViewController(withIdentifier: "BlendViewController") as! BlendViewController
+        let navVC = mainStoryboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+        //window?.rootViewController = blendVC
+        window?.rootViewController = navVC
         window?.makeKeyAndVisible()
     }
     
