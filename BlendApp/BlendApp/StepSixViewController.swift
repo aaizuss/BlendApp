@@ -20,6 +20,21 @@ class StepSixViewController: StepViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func tapStartBlend(_ sender: UIButton) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let blendVC = mainStoryboard.instantiateInitialViewController() as! BlendViewController
+        let snapshot: UIView = self.view.window!.snapshotView(afterScreenUpdates: true)!
+        blendVC.view.addSubview(snapshot)
+        
+        self.view.window?.rootViewController = blendVC
+        UIView.animate(withDuration: 0.5, animations: {() in
+            snapshot.layer.opacity = 0
+            }, completion: {(completion) in
+                snapshot.removeFromSuperview()
+        })
+        
+    }
+    
     /*
     // MARK: - Navigation
 
