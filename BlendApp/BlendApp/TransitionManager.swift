@@ -16,7 +16,6 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
     private var interactive = false
     private var enterPanGesture: UIScreenEdgePanGestureRecognizer!
     private var exitPanGesture: UIPanGestureRecognizer!
-    private var editingMode = false
     
     var sourceViewController: UIViewController! {
         didSet {
@@ -29,9 +28,9 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
     
     var destViewController: SavedBlendsTableViewController! {
         didSet {
-            //self.exitPanGesture = UIPanGestureRecognizer()
-            //self.exitPanGesture.addTarget(self, action:#selector(handleOffstagePan))
-            //self.destViewController.view.addGestureRecognizer(self.exitPanGesture)
+//            self.exitPanGesture = UIPanGestureRecognizer()
+//            self.exitPanGesture.addTarget(self, action:#selector(handleOffstagePan))
+//            self.destViewController.view.addGestureRecognizer(self.exitPanGesture)
         }
     }
     
@@ -106,6 +105,7 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
     }
     
     func performSlideAnimation(fromView: UIView, toView: UIView, container: UIView, with transitionContext: UIViewControllerContextTransitioning, duration: TimeInterval) {
+        print("animating")
         let (offScreenLeft, offScreenRight) = transformsForSlideAnimation(containerView: container)
         
         if self.presenting {
@@ -130,6 +130,7 @@ class TransitionManager: UIPercentDrivenInteractiveTransition, UIViewControllerA
                     print("transition cancelled")
                 } else {
                     transitionContext.completeTransition(true)
+                    print("completing transition")
                 }
         })
     }

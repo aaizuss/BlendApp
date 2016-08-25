@@ -10,7 +10,7 @@
         <!--Navigation Controller-->
         <scene sceneID="q9d-Yb-VF6">
             <objects>
-                <navigationController storyboardIdentifier="NavigationController" navigationBarHidden="YES" id="N9C-9u-uuD" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" id="N9C-9u-uuD" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tw0-mS-kW5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -159,7 +159,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="gradientCell" id="lN7-1W-ZY3" customClass="SavedBlendsTableViewCell" customModule="BlendApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="115"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="115"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lN7-1W-ZY3" id="dGZ-b4-gNf">
                                     <frame key="frameInset" width="375" height="115"/>
@@ -218,7 +218,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="C6A5FEDB-71C0-4533-84FE-DAE3314EE824" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="106BAE86-D943-466F-AA63-04E606003CF1" translatesAutoresizingMaskIntoConstraints="NO" id="tSx-8L-oOD"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -467,7 +467,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="C6A5FEDB-71C0-4533-84FE-DAE3314EE824" width="458" height="896">
+        <image name="106BAE86-D943-466F-AA63-04E606003CF1" width="458" height="896">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

@@ -450,10 +450,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // idea: embed blend vc in a nav controller, instead of embedding the table view
-        // it hasn't worked when i try though :( (nav bar won't show up even if i try to force it)
         if segue.identifier == "ShowSavedBlends" {
-            //let toViewController = segue.destination as! UINavigationController
             let toViewController = segue.destination as! SavedBlendsTableViewController
             toViewController.transitioningDelegate = self.transitionManager
             self.transitionManager.destViewController = toViewController
