@@ -9,7 +9,6 @@
 import UIKit
 import Photos
 
-// note: crashes when you change photos access in settings (only when also running with xcode though?)
 class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // MARK: Properties
@@ -200,8 +199,8 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func didTapView(_ sender: UITapGestureRecognizer) {
         topCircle.tag = 100
         bottomCircle.tag = 101
-        topCircle.alpha = 0.1
-        bottomCircle.alpha = 0.1
+        topCircle.fade(toAlpha: 0.1, withDuration: 0.2)
+        bottomCircle.fade(toAlpha: 0.1, withDuration: 0.2)
     }
     
     @IBAction func didLongPressView(_ sender: UILongPressGestureRecognizer) {
@@ -327,7 +326,6 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
             // bottom circle tag is 101 unless it is currently active
             bottomCircle.tag = 101
             
-            //bottomCircle.alpha = 0.05
             bottomCircle.fade(toAlpha: 0.05, withDuration: 0.3)
             topCircle.indicator.center = picker.pointAtHueSaturation(hue: hueTop, saturation: satTop)
         }
@@ -339,7 +337,6 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
             topCircle.tag = 100
             bottomCircle.tag = 111
             
-            //topCircle.alpha = 0.05
             topCircle.fade(toAlpha: 0.05, withDuration: 0.3)
             bottomCircle.indicator.center = picker.pointAtHueSaturation(hue: hueBot, saturation: satBot)
         }
