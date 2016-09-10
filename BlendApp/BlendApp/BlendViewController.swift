@@ -405,8 +405,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
                                                 preferredStyle: .alert)
         
         let OKAction = UIAlertAction(title: "Go to Settings", style: .default) { (_) -> Void in
-            let settingsURL = URL(string: "prefs:root=Wallpaper")
-            if let url = settingsURL {
+            if let url = URL(string: "prefs:root=Wallpaper") {
                 UIApplication.shared.openURL(url)
             }
             else if let url = URL(string: "prefs:root=General") {
