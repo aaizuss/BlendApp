@@ -48,8 +48,12 @@ class TutorialPageViewController: UIPageViewController {
         return storyboard!.instantiateViewController(withIdentifier: "StepZero") as! StepZeroViewController
     }
     
-    func getStepOne() -> StepOneViewController {
-        return storyboard!.instantiateViewController(withIdentifier: "StepOne") as! StepOneViewController
+//    func getStepOne() -> StepOneViewController {
+//        return storyboard!.instantiateViewController(withIdentifier: "StepOne") as! StepOneViewController
+//    }
+    
+    func getStepTips() -> StepViewController {
+        return storyboard!.instantiateViewController(withIdentifier: "StepTips") as! StepViewController
     }
     
     func getStepTwo() -> StepTwoViewController {
@@ -90,6 +94,8 @@ extension TutorialPageViewController : UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         if viewController is StepSixViewController {
+            return getStepTips()
+        } else if viewController is StepTipsViewController {
             return getStepFive()
         } else if viewController is StepFiveViewController {
             return getStepFour()
@@ -98,8 +104,6 @@ extension TutorialPageViewController : UIPageViewControllerDataSource {
         } else if viewController is StepThreeViewController {
             return getStepTwo()
         } else if viewController is StepTwoViewController {
-            return getStepOne()
-        } else if viewController is StepOneViewController {
             return getStepZero()
         } else {
             return nil
@@ -110,8 +114,6 @@ extension TutorialPageViewController : UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         if viewController is StepZeroViewController {
-            return getStepOne()
-        } else if viewController is StepOneViewController {
             return getStepTwo()
         } else if viewController is StepTwoViewController {
             return getStepThree()
@@ -120,6 +122,8 @@ extension TutorialPageViewController : UIPageViewControllerDataSource {
         } else if viewController is StepFourViewController {
             return getStepFive()
         } else if viewController is StepFiveViewController {
+            return getStepTips()
+        } else if viewController is StepTipsViewController {
             return getStepSix()
         } else {
             return nil
