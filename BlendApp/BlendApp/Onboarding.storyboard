@@ -35,7 +35,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="1CC01409-71EC-4B6D-A52F-3FFF96277058" translatesAutoresizingMaskIntoConstraints="NO" id="uz7-pS-QTl"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="20388F53-8DBC-4E9B-92EF-59510BF3BE9A" translatesAutoresizingMaskIntoConstraints="NO" id="uz7-pS-QTl"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -383,7 +383,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1CC01409-71EC-4B6D-A52F-3FFF96277058" width="458" height="896">
+        <image name="20388F53-8DBC-4E9B-92EF-59510BF3BE9A" width="458" height="896">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
