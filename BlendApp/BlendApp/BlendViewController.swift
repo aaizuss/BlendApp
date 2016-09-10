@@ -47,6 +47,8 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         topCircle.alpha = 0.1
         bottomCircle.alpha = 0.1
         addForceTouchRecognizer(to: view)
+        
+        let _ = BlendPhotoAlbum.sharedInstance
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -368,7 +370,8 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         gradLayer.render(in: UIGraphicsGetCurrentContext()!)
         let wallpaper = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        UIImageWriteToSavedPhotosAlbum(wallpaper!, nil, nil, nil)
+        BlendPhotoAlbum.sharedInstance.save(image: wallpaper!, metadata: [:])
+        //UIImageWriteToSavedPhotosAlbum(wallpaper!, nil, nil, nil)
         
         showSaveAlert()
     }
@@ -401,27 +404,11 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     /// and give option to go to wallpaper settings
     func showSaveAlert() {
         let alertController = UIAlertController(title: "Blend Saved!",
-                                                message: "Go to settings to change your wallpaper now?",
+                                                message: "Open the settings app to use this as your wallpaper.",
                                                 preferredStyle: .alert)
         
-        let OKAction = UIAlertAction(title: "Go to Settings", style: .default) { (_) -> Void in
-            if let url = URL(string: "prefs:root=Wallpaper") {
-                UIApplication.shared.openURL(url)
-            }
-            else if let url = URL(string: "prefs:root=General") {
-                UIApplication.shared.openURL(url)
-            } else {
-                let oopsController = UIAlertController(title: "Oops!", message: "Sorry, you'll have to go to settings manually.", preferredStyle: .alert)
-                let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                oopsController.addAction(OKAction)
-                self.present(oopsController, animated: true, completion: nil)
-            }
-        }
-        
-        let noAction = UIAlertAction(title: "Not now", style: .cancel, handler: nil)
-        alertController.addAction(noAction)
-        
-        alertController.addAction(OKAction)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -442,12 +429,13 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Navigation
 
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowSavedBlends" {
             //let toViewController = segue.destination as! UINavigationController
         }
     }
-    
+    */
     
     @IBAction func unwindToBlendViewController (sender: UIStoryboardSegue){
         if sender.source.isKind(of: SavedBlendsTableViewController.self) {

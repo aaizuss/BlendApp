@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		370496F91D63986C00C1E0B7 /* SavedBlendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370496F81D63986C00C1E0B7 /* SavedBlendsTableViewController.swift */; };
 		370496FB1D63A03C00C1E0B7 /* SavedBlendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370496FA1D63A03C00C1E0B7 /* SavedBlendsTableViewCell.swift */; };
+		3728557D1D846EDC00D5606A /* BlendPhotoAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3728557C1D846EDC00D5606A /* BlendPhotoAlbum.swift */; };
 		375D22891D660BA700C5A0B1 /* GradientAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D22881D660BA700C5A0B1 /* GradientAnimation.swift */; };
 		375D228C1D68CE9200C5A0B1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375D228B1D68CE9200C5A0B1 /* Photos.framework */; };
 		375D228E1D68E85D00C5A0B1 /* ForceTouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375D228D1D68E85D00C5A0B1 /* ForceTouchGestureRecognizer.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		370496F81D63986C00C1E0B7 /* SavedBlendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedBlendsTableViewController.swift; sourceTree = "<group>"; };
 		370496FA1D63A03C00C1E0B7 /* SavedBlendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedBlendsTableViewCell.swift; sourceTree = "<group>"; };
+		3728557C1D846EDC00D5606A /* BlendPhotoAlbum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlendPhotoAlbum.swift; sourceTree = "<group>"; };
 		375D22881D660BA700C5A0B1 /* GradientAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientAnimation.swift; sourceTree = "<group>"; };
 		375D228B1D68CE9200C5A0B1 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		375D228D1D68E85D00C5A0B1 /* ForceTouchGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForceTouchGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				37A5F0D21D13596000C6DAA4 /* LaunchScreen.storyboard */,
 				379C28B71D638E4E00822756 /* saved-grads.plist */,
 				37A5F0D51D13596000C6DAA4 /* Info.plist */,
+				3728557C1D846EDC00D5606A /* BlendPhotoAlbum.swift */,
 			);
 			path = BlendApp;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				370496F91D63986C00C1E0B7 /* SavedBlendsTableViewController.swift in Sources */,
 				37B7EB9A1D1DC88E006256D2 /* StepSixViewController.swift in Sources */,
 				37BD9CB41D148BA100F43934 /* StepZeroViewController.swift in Sources */,
+				3728557D1D846EDC00D5606A /* BlendPhotoAlbum.swift in Sources */,
 				37BD9CB61D148BC300F43934 /* StepTipsViewController.swift in Sources */,
 				37BD9CB21D148B6D00F43934 /* StepViewController.swift in Sources */,
 				37BD9CBC1D148BEA00F43934 /* StepFourViewController.swift in Sources */,
