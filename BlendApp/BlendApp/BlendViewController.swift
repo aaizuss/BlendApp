@@ -228,7 +228,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
             brightTop = tb
         }
         gradLayer.colors = [topColor.cgColor, bottomColor.cgColor]
-        //rotateGradient(gradRotation)
+        rotateGradient(gradRotation)
         view.layer.insertSublayer(gradLayer, at: 0)
     }
     
