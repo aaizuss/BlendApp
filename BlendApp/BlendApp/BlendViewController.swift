@@ -101,7 +101,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func handleForceTouch(_ sender: ForceTouchGestureRecognizer) {
         if sender.state == .began {
-            print("begin")
+            //print("begin")
             getRandomGradient()
         } else if sender.state == .ended {
             print("ends")
@@ -182,7 +182,6 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @IBAction func handleRotate(_ sender: UIRotationGestureRecognizer) {
-        print("calling rotate")
         if topCircle.tag == 100 && bottomCircle.tag == 101 {
             // Only apply the rotation when starting and continuing to rotate
             guard sender.state == UIGestureRecognizerState.ended
@@ -319,7 +318,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
     /// - Parameter picker: the color picker view that you want to activate
     func activatePicker(_ picker: ColorPickerView) {
         if picker == topCircle {
-            print("activating top picker")
+            //print("activating top picker")
             // Change tags to indicate which circle is active
             topCircle.tag = 111
             // bottom circle tag is 101 unless it is currently active
@@ -330,7 +329,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
         if picker == bottomCircle {
-            print("activating bottom picker")
+            //print("activating bottom picker")
 
             // top circle tag is 100 unless it is currently active
             topCircle.tag = 100
@@ -394,7 +393,7 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
             gradArray.add!(colorInfo)
             
             _ = gradArray.write(toFile: plistFilePath, atomically: true)
-            print("path for plist file after saving: \(plistFilePath)")
+            //print("path for plist file after saving: \(plistFilePath)")
         } catch {
             print("an error occurred while writing to plist")
         }
