@@ -24,23 +24,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to learn how" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4XB-qp-0cZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Swipe to learn how" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4XB-qp-0cZ">
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                 <color key="textColor" red="0.98431372549999996" green="0.1174557041" blue="0.54938663850000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="20388F53-8DBC-4E9B-92EF-59510BF3BE9A" translatesAutoresizingMaskIntoConstraints="NO" id="uz7-pS-QTl"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="745" image="5B4AB55E-A865-4057-B652-816EE498F44E" translatesAutoresizingMaskIntoConstraints="NO" id="uz7-pS-QTl"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="uz7-pS-QTl" firstAttribute="centerY" secondItem="mWS-gH-jbR" secondAttribute="centerY" id="4Hu-35-Gqu"/>
                             <constraint firstItem="rmY-iS-rQV" firstAttribute="top" secondItem="4XB-qp-0cZ" secondAttribute="bottom" constant="30" id="Ka9-PS-QiK"/>
-                            <constraint firstItem="uz7-pS-QTl" firstAttribute="top" secondItem="wJ5-x4-gce" secondAttribute="bottom" constant="8" id="MYV-pR-Loe"/>
+                            <constraint firstItem="uz7-pS-QTl" firstAttribute="top" secondItem="wJ5-x4-gce" secondAttribute="bottom" constant="8" id="MYV-pR-Loe">
+                                <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="uz7-pS-QTl" secondAttribute="trailing" id="P6O-aC-BRu"/>
                             <constraint firstAttribute="leadingMargin" secondItem="uz7-pS-QTl" secondAttribute="leading" id="TpX-bc-BC1"/>
                             <constraint firstAttribute="leadingMargin" secondItem="wJ5-x4-gce" secondAttribute="leading" id="TxO-9l-QqR"/>
@@ -48,8 +51,20 @@
                             <constraint firstAttribute="trailingMargin" secondItem="wJ5-x4-gce" secondAttribute="trailing" id="YQO-II-4aD"/>
                             <constraint firstAttribute="leadingMargin" secondItem="4XB-qp-0cZ" secondAttribute="leading" id="Ydd-BC-pLZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4XB-qp-0cZ" secondAttribute="trailing" id="dvd-ah-Z0n"/>
-                            <constraint firstItem="wJ5-x4-gce" firstAttribute="top" secondItem="Hz0-Fj-rzB" secondAttribute="bottom" constant="30" id="uId-xC-iSG"/>
+                            <constraint firstItem="wJ5-x4-gce" firstAttribute="top" secondItem="Hz0-Fj-rzB" secondAttribute="bottom" constant="30" id="uId-xC-iSG">
+                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                            </constraint>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4Hu-35-Gqu"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="4Hu-35-Gqu"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="wallpaperImageView" destination="uz7-pS-QTl" id="8eM-sf-zsr"/>
@@ -57,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yu6-PO-r5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="-705"/>
+            <point key="canvasLocation" x="21.6796875" y="-705.41727672035131"/>
         </scene>
         <!--Step Two View Controller-->
         <scene sceneID="Ju2-j3-AAK">
@@ -71,21 +86,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap in the top or bottom circle to activate the color picker. Then, drag your finger around and watch the gradient change." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYD-2v-kVG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Tap in the top or bottom circle to activate the color picker. Then, drag your finger around and watch the gradient change." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYD-2v-kVG">
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="38"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="howto" translatesAutoresizingMaskIntoConstraints="NO" id="JiT-G8-mzl"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" image="howto" translatesAutoresizingMaskIntoConstraints="NO" id="JiT-G8-mzl"/>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wk-dQ-rLS">
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                 <color key="textColor" red="0.98431372549999996" green="0.1174557041" blue="0.54938663850000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="39"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="55"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -96,13 +111,22 @@
                             <constraint firstItem="7Wk-dQ-rLS" firstAttribute="trailing" secondItem="6ex-eG-xl8" secondAttribute="trailingMargin" id="A7z-VN-0FR"/>
                             <constraint firstItem="nYD-2v-kVG" firstAttribute="top" secondItem="7Wk-dQ-rLS" secondAttribute="bottom" constant="9" id="FDi-1t-R9V"/>
                             <constraint firstItem="fPl-fo-ZAI" firstAttribute="top" secondItem="JiT-G8-mzl" secondAttribute="bottom" constant="63" id="NbX-5z-LkT"/>
-                            <constraint firstItem="JiT-G8-mzl" firstAttribute="top" secondItem="nYD-2v-kVG" secondAttribute="bottom" constant="14" id="aL6-P1-hZp"/>
+                            <constraint firstItem="JiT-G8-mzl" firstAttribute="top" secondItem="nYD-2v-kVG" secondAttribute="bottom" constant="14" id="aL6-P1-hZp">
+                                <variation key="heightClass=regular-widthClass=regular" constant="85"/>
+                            </constraint>
                             <constraint firstItem="JiT-G8-mzl" firstAttribute="trailing" secondItem="6ex-eG-xl8" secondAttribute="trailingMargin" id="bsV-ew-oc3"/>
                             <constraint firstItem="JiT-G8-mzl" firstAttribute="top" secondItem="nYD-2v-kVG" secondAttribute="bottom" constant="14" id="ktF-9s-GJg"/>
-                            <constraint firstItem="7Wk-dQ-rLS" firstAttribute="top" secondItem="ymL-NW-z6U" secondAttribute="bottom" constant="8" id="taO-4N-nKu"/>
+                            <constraint firstItem="7Wk-dQ-rLS" firstAttribute="top" secondItem="ymL-NW-z6U" secondAttribute="bottom" constant="8" id="taO-4N-nKu">
+                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                            </constraint>
                             <constraint firstItem="nYD-2v-kVG" firstAttribute="trailing" secondItem="6ex-eG-xl8" secondAttribute="trailingMargin" id="vKc-68-rQO"/>
                             <constraint firstItem="nYD-2v-kVG" firstAttribute="leading" secondItem="6ex-eG-xl8" secondAttribute="leadingMargin" id="xvF-tO-4gd"/>
                         </constraints>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="ktF-9s-GJg"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZKm-NU-vLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -121,13 +145,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yry-i2-g5b">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yry-i2-g5b">
                                 <string key="text">Select a circle. Then, drag your finger vertically outside of the circle to change the brightness. Higher is brighter; lower is darker.</string>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="brightness" translatesAutoresizingMaskIntoConstraints="NO" id="pwD-pX-i1b"/>
@@ -136,18 +160,26 @@
                                 <color key="textColor" red="0.98431372549999996" green="0.1174557041" blue="0.54938663850000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="39"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="55"/>
                                 </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ydP-g8-uaC" firstAttribute="top" secondItem="TMk-pu-67r" secondAttribute="bottom" constant="8" id="ODb-dp-627"/>
+                            <constraint firstItem="ydP-g8-uaC" firstAttribute="top" secondItem="TMk-pu-67r" secondAttribute="bottom" constant="8" id="ODb-dp-627">
+                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                            </constraint>
                             <constraint firstAttribute="leadingMargin" secondItem="pwD-pX-i1b" secondAttribute="leading" id="OII-JY-f7c"/>
-                            <constraint firstItem="pwD-pX-i1b" firstAttribute="top" secondItem="yry-i2-g5b" secondAttribute="bottom" constant="14" id="QCM-Pk-inP"/>
+                            <constraint firstItem="pwD-pX-i1b" firstAttribute="top" secondItem="yry-i2-g5b" secondAttribute="bottom" constant="14" id="QCM-Pk-inP">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="90"/>
+                            </constraint>
                             <constraint firstItem="ydP-g8-uaC" firstAttribute="leading" secondItem="dca-7a-1U2" secondAttribute="leadingMargin" id="VXI-jY-3kj"/>
                             <constraint firstItem="yry-i2-g5b" firstAttribute="top" secondItem="ydP-g8-uaC" secondAttribute="bottom" constant="10" id="kW0-f7-DKN"/>
-                            <constraint firstItem="aka-Wt-tVl" firstAttribute="top" secondItem="pwD-pX-i1b" secondAttribute="bottom" constant="30" id="pHe-kV-u0A"/>
+                            <constraint firstItem="aka-Wt-tVl" firstAttribute="top" secondItem="pwD-pX-i1b" secondAttribute="bottom" constant="30" id="pHe-kV-u0A">
+                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="63"/>
+                            </constraint>
                             <constraint firstItem="yry-i2-g5b" firstAttribute="top" secondItem="ydP-g8-uaC" secondAttribute="bottom" constant="10" id="rku-Fb-0zr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yry-i2-g5b" secondAttribute="trailing" id="svJ-JI-5DR"/>
                             <constraint firstAttribute="leadingMargin" secondItem="yry-i2-g5b" secondAttribute="leading" id="uJB-OB-zb9"/>
@@ -173,39 +205,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To change the gradient angle, tap outside of the color pickers. Then, rotate your fingers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7C-5f-bQd">
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="41"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMa-k4-vec">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Angle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMa-k4-vec">
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                 <color key="textColor" red="0.98431372549999996" green="0.1174557041" blue="0.54938663850000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="39"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="55"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="rotation" translatesAutoresizingMaskIntoConstraints="NO" id="PUa-qE-RHD"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" image="rotation" translatesAutoresizingMaskIntoConstraints="NO" id="PUa-qE-RHD"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aMa-k4-vec" firstAttribute="top" secondItem="eVg-96-NA5" secondAttribute="bottom" constant="8" id="6HB-7Y-g5a"/>
+                            <constraint firstItem="aMa-k4-vec" firstAttribute="top" secondItem="eVg-96-NA5" secondAttribute="bottom" constant="8" id="6HB-7Y-g5a">
+                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                            </constraint>
                             <constraint firstItem="v7C-5f-bQd" firstAttribute="trailing" secondItem="C04-hf-9a0" secondAttribute="trailingMargin" id="6qE-aj-w20"/>
                             <constraint firstAttribute="leadingMargin" secondItem="v7C-5f-bQd" secondAttribute="leading" id="8jD-9j-coG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v7C-5f-bQd" secondAttribute="trailing" id="AZs-2k-uld"/>
-                            <constraint firstItem="v7C-5f-bQd" firstAttribute="top" secondItem="aMa-k4-vec" secondAttribute="bottom" constant="8" id="VqV-7L-tis"/>
+                            <constraint firstItem="v7C-5f-bQd" firstAttribute="top" secondItem="aMa-k4-vec" secondAttribute="bottom" constant="8" id="VqV-7L-tis">
+                                <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                            </constraint>
                             <constraint firstItem="v7C-5f-bQd" firstAttribute="leading" secondItem="C04-hf-9a0" secondAttribute="leadingMargin" id="dOb-WJ-0Et"/>
                             <constraint firstItem="aMa-k4-vec" firstAttribute="leading" secondItem="C04-hf-9a0" secondAttribute="leadingMargin" id="eVH-mW-s5C"/>
                             <constraint firstItem="PUa-qE-RHD" firstAttribute="leading" secondItem="C04-hf-9a0" secondAttribute="leadingMargin" id="icz-g7-e7q"/>
-                            <constraint firstItem="PUa-qE-RHD" firstAttribute="top" secondItem="v7C-5f-bQd" secondAttribute="bottom" constant="8" id="jcM-Hh-svQ"/>
-                            <constraint firstItem="bZh-q6-0rK" firstAttribute="top" secondItem="PUa-qE-RHD" secondAttribute="bottom" constant="20" id="ujz-I3-WTR"/>
+                            <constraint firstItem="PUa-qE-RHD" firstAttribute="top" secondItem="v7C-5f-bQd" secondAttribute="bottom" constant="8" id="jcM-Hh-svQ">
+                                <variation key="heightClass=regular-widthClass=regular" constant="90"/>
+                            </constraint>
+                            <constraint firstItem="bZh-q6-0rK" firstAttribute="top" secondItem="PUa-qE-RHD" secondAttribute="bottom" constant="20" id="ujz-I3-WTR">
+                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                            </constraint>
                             <constraint firstItem="aMa-k4-vec" firstAttribute="trailing" secondItem="C04-hf-9a0" secondAttribute="trailingMargin" id="vE1-rf-IW6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PUa-qE-RHD" secondAttribute="trailing" id="wfi-re-Jdl"/>
                             <constraint firstItem="v7C-5f-bQd" firstAttribute="top" secondItem="aMa-k4-vec" secondAttribute="bottom" constant="8" id="woc-yy-WPA"/>
                         </constraints>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="woc-yy-WPA"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efv-ge-5F6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -224,37 +269,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake for a random gradient! You can save it or adjust it to your liking." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyS-Am-LGU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="Shake for a random gradient! You can save it or adjust it to your liking." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyS-Am-LGU">
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="46"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Blends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ams-Lf-P4a">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Random Blends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ams-Lf-P4a">
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                 <color key="textColor" red="0.98431372549999996" green="0.1174557041" blue="0.54938663850000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="39"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="60"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="r1" translatesAutoresizingMaskIntoConstraints="NO" id="c3e-he-PfU"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="735" image="r1" translatesAutoresizingMaskIntoConstraints="NO" id="c3e-he-PfU"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="c3e-he-PfU" firstAttribute="trailing" secondItem="eum-0s-vIT" secondAttribute="trailingMargin" id="0Nd-Ui-cUm"/>
-                            <constraint firstItem="Ams-Lf-P4a" firstAttribute="top" secondItem="2JL-GM-cLr" secondAttribute="bottom" constant="8" id="4VL-pP-tig"/>
-                            <constraint firstItem="c3e-he-PfU" firstAttribute="leading" secondItem="eum-0s-vIT" secondAttribute="leadingMargin" id="CTF-yg-Qgf"/>
-                            <constraint firstItem="MyS-Am-LGU" firstAttribute="trailing" secondItem="eum-0s-vIT" secondAttribute="trailingMargin" id="IJp-F0-jDx"/>
-                            <constraint firstItem="MyS-Am-LGU" firstAttribute="leading" secondItem="eum-0s-vIT" secondAttribute="leadingMargin" id="Ldm-Kc-flO"/>
-                            <constraint firstItem="wN2-Hc-VKe" firstAttribute="top" secondItem="c3e-he-PfU" secondAttribute="bottom" constant="20" id="NMM-11-HGt"/>
-                            <constraint firstItem="Ams-Lf-P4a" firstAttribute="leading" secondItem="eum-0s-vIT" secondAttribute="leadingMargin" id="WnI-uX-zft"/>
-                            <constraint firstItem="c3e-he-PfU" firstAttribute="top" secondItem="MyS-Am-LGU" secondAttribute="bottom" constant="8" id="erf-FJ-3VI"/>
-                            <constraint firstItem="Ams-Lf-P4a" firstAttribute="trailing" secondItem="eum-0s-vIT" secondAttribute="trailingMargin" id="hXd-jd-39l"/>
-                            <constraint firstItem="MyS-Am-LGU" firstAttribute="top" secondItem="Ams-Lf-P4a" secondAttribute="bottom" constant="15" id="iWd-ih-9Hg"/>
+                            <constraint firstAttribute="trailing" secondItem="Ams-Lf-P4a" secondAttribute="trailing" id="FJ8-aW-xer"/>
+                            <constraint firstItem="MyS-Am-LGU" firstAttribute="top" secondItem="Ams-Lf-P4a" secondAttribute="bottom" constant="15" id="LWW-5D-WYt">
+                                <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="c3e-he-PfU" secondAttribute="trailing" id="M2H-vv-Z3Q"/>
+                            <constraint firstItem="c3e-he-PfU" firstAttribute="top" secondItem="MyS-Am-LGU" secondAttribute="bottom" constant="20" id="RoP-mH-VOW"/>
+                            <constraint firstItem="Ams-Lf-P4a" firstAttribute="top" secondItem="2JL-GM-cLr" secondAttribute="bottom" constant="8" id="bLr-Al-hHT"/>
+                            <constraint firstItem="c3e-he-PfU" firstAttribute="leading" secondItem="eum-0s-vIT" secondAttribute="leading" id="cxx-5B-Edi"/>
+                            <constraint firstItem="Ams-Lf-P4a" firstAttribute="leading" secondItem="eum-0s-vIT" secondAttribute="leading" id="eC0-47-NE1"/>
+                            <constraint firstItem="MyS-Am-LGU" firstAttribute="leading" secondItem="eum-0s-vIT" secondAttribute="leading" id="eob-hG-7Jm"/>
+                            <constraint firstAttribute="trailing" secondItem="MyS-Am-LGU" secondAttribute="trailing" id="jp7-Yy-yj8"/>
+                            <constraint firstItem="c3e-he-PfU" firstAttribute="top" secondItem="MyS-Am-LGU" secondAttribute="bottom" constant="10" id="pEk-Dt-cLD">
+                                <variation key="heightClass=regular-widthClass=compact" constant="18"/>
+                            </constraint>
+                            <constraint firstAttribute="bottom" secondItem="c3e-he-PfU" secondAttribute="bottom" constant="8" id="sNx-3X-E51">
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                            </constraint>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FJ8-aW-xer"/>
+                                <exclude reference="bLr-Al-hHT"/>
+                                <exclude reference="eC0-47-NE1"/>
+                                <exclude reference="LWW-5D-WYt"/>
+                                <exclude reference="eob-hG-7Jm"/>
+                                <exclude reference="jp7-Yy-yj8"/>
+                                <exclude reference="M2H-vv-Z3Q"/>
+                                <exclude reference="RoP-mH-VOW"/>
+                                <exclude reference="cxx-5B-Edi"/>
+                                <exclude reference="pEk-Dt-cLD"/>
+                                <exclude reference="sNx-3X-E51"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="FJ8-aW-xer"/>
+                                <include reference="bLr-Al-hHT"/>
+                                <include reference="eC0-47-NE1"/>
+                                <include reference="LWW-5D-WYt"/>
+                                <include reference="eob-hG-7Jm"/>
+                                <include reference="jp7-Yy-yj8"/>
+                                <include reference="M2H-vv-Z3Q"/>
+                                <exclude reference="RoP-mH-VOW"/>
+                                <include reference="cxx-5B-Edi"/>
+                                <include reference="pEk-Dt-cLD"/>
+                                <include reference="sNx-3X-E51"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="shakeImageView" destination="c3e-he-PfU" id="vam-FX-8Wx"/>
@@ -276,21 +358,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't forget to save your Blend to use it as wallpaper! Tap Blend to view your saved Blends." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfb-Gx-23S">
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't forget to save your Blend to use it as wallpaper! Tap Blends to view your saved Blends." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfb-Gx-23S">
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="46"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaF-wk-fHY">
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Start Blend!">
                                     <color key="titleColor" red="0.98431372549999996" green="0.1174557041" blue="0.54938663850000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 </variation>
                                 <connections>
                                     <action selector="tapStartBlend:" destination="b6v-1N-2Cj" eventType="touchUpInside" id="Iaq-sz-0ct"/>
@@ -301,23 +383,39 @@
                                 <color key="textColor" red="0.98431372549999996" green="0.1174557041" blue="0.54938663850000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="39"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="54"/>
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="saved-ex" translatesAutoresizingMaskIntoConstraints="NO" id="Tmy-MR-6U7"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mfb-Gx-23S" firstAttribute="top" secondItem="qsl-d7-uIq" secondAttribute="bottom" constant="15" id="32s-hZ-jfl"/>
-                            <constraint firstItem="aaP-ta-3As" firstAttribute="top" secondItem="Tmy-MR-6U7" secondAttribute="bottom" constant="20" id="5Ck-3c-I5S"/>
-                            <constraint firstItem="Tmy-MR-6U7" firstAttribute="leading" secondItem="5QU-mD-lxS" secondAttribute="leading" constant="16" id="AmD-vp-aco"/>
+                            <constraint firstItem="mfb-Gx-23S" firstAttribute="top" secondItem="qsl-d7-uIq" secondAttribute="bottom" constant="15" id="32s-hZ-jfl">
+                                <variation key="heightClass=regular-widthClass=compact" constant="9"/>
+                            </constraint>
+                            <constraint firstItem="aaP-ta-3As" firstAttribute="top" secondItem="Tmy-MR-6U7" secondAttribute="bottom" constant="20" id="5Ck-3c-I5S">
+                                <variation key="heightClass=regular-widthClass=compact" constant="55"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="70"/>
+                            </constraint>
+                            <constraint firstItem="Tmy-MR-6U7" firstAttribute="leading" secondItem="5QU-mD-lxS" secondAttribute="leading" constant="16" id="AmD-vp-aco">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="qsl-d7-uIq" firstAttribute="trailing" secondItem="5QU-mD-lxS" secondAttribute="trailingMargin" id="NfV-7W-GHK"/>
                             <constraint firstItem="RaF-wk-fHY" firstAttribute="centerX" secondItem="5QU-mD-lxS" secondAttribute="centerX" id="R7o-iG-jec"/>
-                            <constraint firstItem="RaF-wk-fHY" firstAttribute="top" secondItem="mfb-Gx-23S" secondAttribute="bottom" constant="8" id="b28-GR-xRL"/>
+                            <constraint firstItem="RaF-wk-fHY" firstAttribute="top" secondItem="mfb-Gx-23S" secondAttribute="bottom" constant="8" id="b28-GR-xRL">
+                                <variation key="heightClass=regular-widthClass=compact" constant="5"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                            </constraint>
                             <constraint firstItem="mfb-Gx-23S" firstAttribute="leading" secondItem="5QU-mD-lxS" secondAttribute="leadingMargin" id="fyp-b7-la2"/>
-                            <constraint firstItem="Tmy-MR-6U7" firstAttribute="top" secondItem="RaF-wk-fHY" secondAttribute="bottom" constant="5" id="gDX-oN-hqs"/>
-                            <constraint firstAttribute="trailing" secondItem="Tmy-MR-6U7" secondAttribute="trailing" constant="16" id="hau-kp-1mc"/>
-                            <constraint firstItem="qsl-d7-uIq" firstAttribute="top" secondItem="26Y-I7-2Nw" secondAttribute="bottom" constant="8" id="qni-vM-d7g"/>
+                            <constraint firstItem="Tmy-MR-6U7" firstAttribute="top" secondItem="RaF-wk-fHY" secondAttribute="bottom" constant="5" id="gDX-oN-hqs">
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="Tmy-MR-6U7" secondAttribute="trailing" constant="16" id="hau-kp-1mc">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="qsl-d7-uIq" firstAttribute="top" secondItem="26Y-I7-2Nw" secondAttribute="bottom" constant="8" id="qni-vM-d7g">
+                                <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                            </constraint>
                             <constraint firstItem="qsl-d7-uIq" firstAttribute="leading" secondItem="5QU-mD-lxS" secondAttribute="leadingMargin" id="rIg-Y4-dpv"/>
                             <constraint firstItem="mfb-Gx-23S" firstAttribute="trailing" secondItem="5QU-mD-lxS" secondAttribute="trailingMargin" id="yxR-su-dzF"/>
                         </constraints>
@@ -348,20 +446,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVI-qh-4eK">
-                                <string key="text">Double tap anywhere to swap color locations  Long press to reset the gradient angle  If your device supports 3D touch, you can press hard for a random gradient</string>
+                                <string key="text">To change the gradient angle, tap outside the circles and perform a rotation gesture.  Long press to reset the gradient angle  Double tap anywhere to swap color locations  If your device supports 3D touch, you can press hard for a random gradient </string>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="35"/>
+                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="53"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Tips" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dy-mn-a5x">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="More Tips" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dy-mn-a5x">
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
                                 <color key="textColor" red="0.98431372549999996" green="0.1174557041" blue="0.54938663850000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="39"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="70"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -383,7 +481,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="20388F53-8DBC-4E9B-92EF-59510BF3BE9A" width="458" height="896">
+        <image name="5B4AB55E-A865-4057-B652-816EE498F44E" width="458" height="896">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
