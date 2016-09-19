@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="rmY-iS-rQV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mWS-gH-jbR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create gorgeous gradients with Blend, and set them as your wallpaper!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ5-x4-gce">
@@ -35,7 +35,7 @@
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="745" image="5B4AB55E-A865-4057-B652-816EE498F44E" translatesAutoresizingMaskIntoConstraints="NO" id="uz7-pS-QTl"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="745" image="B3E1D7D7-7936-4417-9054-D2523F7ECBE8" translatesAutoresizingMaskIntoConstraints="NO" id="uz7-pS-QTl"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -83,7 +83,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fPl-fo-ZAI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6ex-eG-xl8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Tap in the top or bottom circle to activate the color picker. Then, drag your finger around and watch the gradient change." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYD-2v-kVG">
@@ -142,7 +142,7 @@
                         <viewControllerLayoutGuide type="bottom" id="aka-Wt-tVl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dca-7a-1U2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yry-i2-g5b">
@@ -201,7 +201,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bZh-q6-0rK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="C04-hf-9a0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To change the gradient angle, tap outside of the color pickers. Then, rotate your fingers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7C-5f-bQd">
@@ -266,7 +266,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wN2-Hc-VKe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eum-0s-vIT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="Shake for a random gradient! You can save it or adjust it to your liking." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyS-Am-LGU">
@@ -355,7 +355,7 @@
                         <viewControllerLayoutGuide type="bottom" id="aaP-ta-3As"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5QU-mD-lxS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't forget to save your Blend to use it as wallpaper! Tap Blends to view your saved Blends." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfb-Gx-23S">
@@ -442,7 +442,7 @@
                         <viewControllerLayoutGuide type="bottom" id="mPc-jP-WvU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UUP-8w-01M">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVI-qh-4eK">
@@ -469,9 +469,9 @@
                             <constraint firstItem="6dy-mn-a5x" firstAttribute="trailing" secondItem="UUP-8w-01M" secondAttribute="trailingMargin" id="EPz-xg-C09"/>
                             <constraint firstItem="6dy-mn-a5x" firstAttribute="leading" secondItem="UUP-8w-01M" secondAttribute="leadingMargin" id="GY9-dm-BjG"/>
                             <constraint firstItem="VVI-qh-4eK" firstAttribute="leading" secondItem="UUP-8w-01M" secondAttribute="leadingMargin" id="OQk-vb-kft"/>
-                            <constraint firstItem="mPc-jP-WvU" firstAttribute="top" secondItem="VVI-qh-4eK" secondAttribute="bottom" constant="80" id="bEy-gY-5dy"/>
-                            <constraint firstItem="VVI-qh-4eK" firstAttribute="top" secondItem="6dy-mn-a5x" secondAttribute="bottom" constant="15" id="sBP-Yf-jo6"/>
-                            <constraint firstItem="6dy-mn-a5x" firstAttribute="top" secondItem="Ygw-Xl-blN" secondAttribute="bottom" constant="70" id="yA0-hM-O5V"/>
+                            <constraint firstItem="mPc-jP-WvU" firstAttribute="top" secondItem="VVI-qh-4eK" secondAttribute="bottom" constant="30" id="bEy-gY-5dy"/>
+                            <constraint firstItem="VVI-qh-4eK" firstAttribute="top" secondItem="6dy-mn-a5x" secondAttribute="bottom" constant="20" id="sBP-Yf-jo6"/>
+                            <constraint firstItem="6dy-mn-a5x" firstAttribute="top" secondItem="Ygw-Xl-blN" secondAttribute="bottom" constant="8" id="yA0-hM-O5V"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -481,7 +481,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="5B4AB55E-A865-4057-B652-816EE498F44E" width="458" height="896">
+        <image name="B3E1D7D7-7936-4417-9054-D2523F7ECBE8" width="458" height="896">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
