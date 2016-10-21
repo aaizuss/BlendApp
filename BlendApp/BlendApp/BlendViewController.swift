@@ -368,8 +368,10 @@ class BlendViewController: UIViewController, UIGestureRecognizerDelegate {
         UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, true, 0.0)
         gradLayer.render(in: UIGraphicsGetCurrentContext()!)
         let wallpaper = UIGraphicsGetImageFromCurrentImageContext()
+        let pngImageData = UIImagePNGRepresentation(wallpaper!)
+        let pngWallpaper = UIImage(data: pngImageData!)
+        BlendPhotoAlbum.sharedInstance.save(image: pngWallpaper!, metadata: [:])
         UIGraphicsEndImageContext()
-        BlendPhotoAlbum.sharedInstance.save(image: wallpaper!, metadata: [:])
         //UIImageWriteToSavedPhotosAlbum(wallpaper!, nil, nil, nil)
         
         showSaveAlert()
